@@ -1,0 +1,64 @@
+.yu-collapse{
+    --yu-collapse-border-color: var(--yu-border-color-light);
+    --yu-collapse-header-height: 48px;
+    --yu-collapse-header-bg-color: var(--yu-fill-color-blank);
+    --yu-collapse-header-text-color: var(--yu-text-color-primary);
+    --yu-collapse-header-font-size: 13px;
+    --yu-collapse-content-bg-color: var(--yu-fill-color-blank);
+    --yu-collapse-content-font-size: 13px;
+    --yu-collapse-content-text-color: var(--yu-text-color-primary);
+    --yu-collapse-disabled-text-color: var(--yu-disabled-text-color);
+    --yu-collapse-disabled-border-color: var(--yu-border-color-lighter);
+    border-top: 1px solid var(--yu-collapse-border-color);
+    border-bottom: 1px solid var(--yu-collapse-border-color);
+}
+
+.yu-collapse-item__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--yu-collapse-header-height);
+    line-height: var(--yu-collapse-header-height);
+    background-color: var(--yu-collapse-header-bg-color);
+    color: var(--yu-collapse-header-text-color);
+    cursor: pointer;
+    font-size: var(--yu-collapse-header-font-size);
+    font-weight: 500;
+    transition: border-bottom-color var(--yu-transition-duration);
+    outline: none;
+    border-bottom: 1px solid var(--yu-collapse-border-color);
+
+    &.is-disabled {
+        color: var(--yu-collapse-disabled-text-color);
+        cursor: not-allowed;
+        background-image: none;
+    }
+
+    &.is-active {
+        border-bottom-color: transparent;
+
+        .header-angle {
+            transform: rotate(90deg);
+        }
+    }
+
+    .header-angle {
+        transition: transform var(--yu-transition-duration);
+    }
+}
+.yu-collapse-item__content {
+    will-change: height;
+    background-color: var(--yu-collapse-content-bg-color);
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: var(--yu-collapse-content-font-size);
+    color: var(--yu-collapse-content-text-color);
+    border-bottom: 1px solid var(--yu-collapse-border-color);
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.slide-enter-active,.slide-leave-active{
+    transition: height var(--yu-transition-duration)
+}
+
