@@ -41,6 +41,12 @@ export default defineConfig({
         items:[
           {text:'Button',link:'/components/button'}
         ]
+      },
+      {
+        text:'Form表单组件',
+        items:[
+          {text:'Input',link:'/components/input'}
+        ]
       }
     ],
 
