@@ -9,7 +9,10 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -25,6 +28,8 @@
     "@types/node": "^22.13.4",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitejs/plugin-vue-jsx": "^4.1.1",
+    "@vitepress-demo-preview/component": "^2.3.2",
+    "@vitepress-demo-preview/plugin": "^1.4.0",
     "@vue-macros/volar": "^3.0.0-beta.3",
     "@vue/eslint-config-typescript": "^14.4.0",
     "@vue/test-utils": "^2.4.6",
@@ -44,6 +49,7 @@
     "unplugin-vue-macros": "^2.14.5",
     "vite": "^6.1.0",
     "vite-plugin-vue-devtools": "^7.7.2",
+    "vitepress": "^1.6.3",
     "vitest": "^3.0.8",
     "vue-macros": "^3.0.0-beta.3",
     "vue-tsc": "^2.2.2"
