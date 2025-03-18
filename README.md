@@ -1,39 +1,154 @@
-# v-element
+# IceCream UI
 
-This template should help get you started developing with Vue 3 in Vite.
+一个基于 Vue3 的轻量级 UI 组件库，提供简洁、易用、美观的组件设计系统。
 
-## Recommended IDE Setup
+## 项目介绍
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+IceCream UI 是一款基于 Vue3 开发的 UI 组件库，使用 Composition API 和 TypeScript 构建。组件库设计简约现代，易于使用，旨在帮助开发者快速构建高质量的 Web 应用界面。
 
-## Type Support for `.vue` Imports in TS
+## 特性
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **🚀 基于 Vue3**：充分利用 Vue3 Composition API 的优势
+- **📦 按需引入**：支持组件按需引入，优化应用体积
+- **🔧 TypeScript 支持**：完全使用 TypeScript 编写，提供类型定义
+- **🎨 可定制主题**：基于 CSS 变量的主题系统，易于定制
+- **📱 响应式设计**：适配不同屏幕尺寸
+- **🔍 详细文档**：提供完善的使用文档和示例
 
-## Customize configuration
+## 已实现组件
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Button 按钮
+- Input 输入框
+- Collapse 折叠面板
+- Icon 图标
 
-## Project Setup
+## 快速开始
 
-```sh
+### 下载项目
+
+```bash
+git clone https://github.com/your-username/IceCream-UI.git
+cd IceCream-UI
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 使用组件
 
-```sh
-npm run dev
+```vue
+<template>
+  <div>
+    <yu-button type="primary">主要按钮</yu-button>
+    <yu-input v-model="input" placeholder="请输入内容"></yu-input>
+    <yu-collapse v-model="activeNames">
+      <yu-collapse-item name="1" title="标题1">内容1</yu-collapse-item>
+      <yu-collapse-item name="2" title="标题2">内容2</yu-collapse-item>
+    </yu-collapse>
+  </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import Button from "@/components/Button/Button.vue";
+import Input from "@/components/Input/Input.vue";
+import Collapse from "@/components/Collapse/Collapse.vue";
+import CollapseItem from "@/components/Collapse/CollapseItem.vue";
+
+const input = ref("");
+const activeNames = ref(["1"]);
+</script>
 ```
 
-### Type-Check, Compile and Minify for Production
+## 组件预览
 
-```sh
-npm run build
+### Button 按钮
+
+提供多种类型、状态和尺寸的按钮。
+
+```vue
+<yu-button>默认按钮</yu-button>
+<yu-button type="primary">主要按钮</yu-button>
+<yu-button type="success">成功按钮</yu-button>
+<yu-button type="warning">警告按钮</yu-button>
+<yu-button type="danger">危险按钮</yu-button>
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Input 输入框
 
-```sh
-npm run lint
+支持各种类型的输入框、文本域和复合型输入框。
+
+```vue
+<yu-input v-model="input" placeholder="请输入内容"></yu-input>
+<yu-input type="password" show-password placeholder="请输入密码"></yu-input>
+<yu-input type="textarea" placeholder="请输入多行文本"></yu-input>
 ```
+
+### Collapse 折叠面板
+
+可以折叠/展开的内容区域，支持手风琴模式。
+
+```vue
+<yu-collapse v-model="activeNames">
+  <yu-collapse-item name="1" title="折叠面板1">内容区域1</yu-collapse-item>
+  <yu-collapse-item name="2" title="折叠面板2">内容区域2</yu-collapse-item>
+</yu-collapse>
+```
+
+## 开发指南
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 启动文档站点
+
+```bash
+npm run docs:dev
+```
+
+### 构建文档
+
+```bash
+npm run docs:build
+```
+
+## 项目结构
+
+```
+IceCream-UI/
+├── docs/                 # 文档源码
+│   ├── components/       # 组件文档
+│   └── demo/             # 示例代码
+├── src/                  # 组件源码
+│   └── components/       # 组件文件夹
+│       ├── Button/       # 按钮组件
+│       ├── Input/        # 输入框组件
+│       ├── Collapse/     # 折叠面板组件
+│       └── Icon/         # 图标组件
+├── public/               # 静态资源
+├── .gitignore            # Git忽略文件
+├── package.json          # 包配置
+└── README.md             # 项目说明
+```
+
+## 贡献指南
+
+1. Fork 本仓库
+2. 创建你的特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 打开一个 Pull Request
+
+## 许可证
+
+[MIT](LICENSE)
+
+## 联系方式
+
+- 作者: 您的名字
+- 邮箱: your.email@example.com
+
+---
+
+感谢您使用 IceCream UI！
