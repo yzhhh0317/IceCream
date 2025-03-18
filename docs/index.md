@@ -12,7 +12,7 @@ hero:
       link: /components/button
     - theme: alt
       text: GitHub
-      link: https://github.com/yzhhh0317/v-element
+      link: https://github.com/yzhhh0317/IceCream-UI
 
 features:
   - title: 简洁易用
