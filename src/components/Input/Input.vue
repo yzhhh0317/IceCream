@@ -1,4 +1,4 @@
-<<template>
+<template>
   <div
   class="yu-input"
   :class="{
@@ -89,72 +89,92 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, ref,useAttrs,watch, type Ref } from 'vue';
-import type { InputProps,InputEmits } from './types';
+import { computed, nextTick, ref, useAttrs, watch, type Ref } from 'vue';
+import type { InputProps, InputEmits } from './types';
 import Icon from '../Icon/Icon.vue';
 
 defineOptions({
     name:'YuInput',
     inheritAttrs:false
 })
-const props= withDefaults(defineProps<InputProps>(),{type:'text',modelValue:'',autocomplete:'off'})
-const emits=defineEmits<InputEmits>()
-const attrs=useAttrs()
-const innerValue=ref(props.modelValue)
-const isFocus=ref(false)
-const passwordVisiable=ref(false)
-const inputRef=ref() as Ref<HTMLInputElement>
+const props = withDefaults(defineProps<InputProps>(), {type:'text', modelValue:'', autocomplete:'off'})
+const emits = defineEmits<InputEmits>()
+const attrs = useAttrs()
+const innerValue = ref(props.modelValue)
+const isFocus = ref(false)
+const passwordVisiable = ref(false)
+const inputRef = ref() as Ref<HTMLInputElement>
 
-//’“清空”图标出现的条件
-const showClear=computed(()=>
+//'"清空"图标出现的条件
+const showClear = computed(() =>
     props.clearable &&
     !props.disabled && 
     !!innerValue && 
     isFocus.value
 )
 
-const showPasswordArea=computed(()=>
+const showPasswordArea = computed(() =>
     props.showPassword && 
     !props.disabled && 
     !!innerValue.value
 )
-const togglePasswordVisiable=()=>{
-    passwordVisiable.value= !passwordVisiable.value
+const togglePasswordVisiable = () => {
+    passwordVisiable.value = !passwordVisiable.value
 }
-const NOOP=()=>{}
-const keepFocus=async()=>{
+const NOOP = () => {}
+const keepFocus = async() => {
     await nextTick()
     inputRef.value.focus()
 }
-const handleInput=()=>{
-    emits('update:modelValue',innerValue.value)
-    emits('input',innerValue.value)
+const handleInput = () => {
+    emits('update:modelValue', innerValue.value)
+    emits('input', innerValue.value)
 }
-const handleChange=()=>{
-    emits('change',innerValue.value)
+const handleChange = () => {
+    emits('change', innerValue.value)
 }
-const handleFocus=(event:FocusEvent)=>{
-    isFocus.value=true
-    emits('focus',event)
+const handleFocus = (event: FocusEvent) => {
+    isFocus.value = true
+    emits('focus', event)
 }
-const handleBlur=(event:FocusEvent)=>{
-    isFocus.value=false
-    emits('blur',event)
+const handleBlur = (event: FocusEvent) => {
+    isFocus.value = false
+    emits('blur', event)
 }
-const clear=()=>{
-    console.log('clear trigger');
-    innerValue.value=''
-    emits('update:modelValue','')
+const clear = () => {
+    innerValue.value = ''
+    emits('update:modelValue', '')
     emits('clear')
-    emits('input','')
-    emits('change','')
-
+    emits('input', '')
+    emits('change', '')
 }
-watch(()=>props.modelValue,(newValue)=>{
-    innerValue.value=newValue
+watch(() => props.modelValue, (newValue) => {
+    innerValue.value = newValue
 })
 
 defineExpose({
-    ref:inputRef
+    ref: inputRef
 })
 </script>
+
+<style>
+.yu-input {
+  display: inline-flex; 
+}
+
+.yu-input.is-prepend .yu-input__prepend,
+.yu-input.is-append .yu-input__append {
+  display: inline-flex;
+  align-items: center;
+}
+
+.yu-input__clear, 
+.yu-input__password {
+  cursor: pointer;
+}
+
+.yu-input__wrapper.is-focus,
+.yu-input__wrapper:focus-within {
+  box-shadow: 0 0 0 1px var(--yu-input-focus-border-color, var(--yu-color-primary, #409eff)) inset;
+}
+</style>

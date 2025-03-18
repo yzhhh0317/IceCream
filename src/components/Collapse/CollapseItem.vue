@@ -73,7 +73,50 @@ const transitionEvents:Record<string,(el:HTMLElement)=>void>={
 </script>
 
 <style>
-.yu-collapse-item__header{
-  font-size: 30px;
+.yu-collapse-item__header {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #303133;
+  cursor: pointer;
+  border-bottom: 1px solid #EBEEF5;
+  padding: 12px 20px;
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.yu-collapse-item__header:hover {
+  background-color: #F5F7FA;
+}
+
+.yu-collapse-item__header.is-active .header-angle {
+  transform: rotate(90deg);
+}
+
+.yu-collapse-item__header .header-angle {
+  font-size: 14px;
+  color: #909399;
+  transition: transform 0.3s;
+}
+
+.yu-collapse-item__content {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: #606266;
+  line-height: 1.6;
+}
+
+.yu-collapse-item__header.is-disabled {
+  color: #C0C4CC;
+  cursor: not-allowed;
+}
+
+.yu-collapse {
+  border: 1px solid #EBEEF5;
+  border-radius: 4px;
+  overflow: hidden;
 }
 </style>

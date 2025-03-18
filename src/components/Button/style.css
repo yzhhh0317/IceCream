@@ -1,20 +1,21 @@
 .yu-button {
-  --yu-button-font-weight: var(--yu-font-weight-primary);
-  --yu-button-border-color: var(--yu-border-color);
-  --yu-button-bg-color: var(--yu-fill-color-blank);
-  --yu-button-text-color: var(--yu-text-color-regular);
-  --yu-button-disabled-text-color: var(--yu-disabled-text-color);
-  --yu-button-disabled-bg-color: var(--yu-fill-color-blank);
-  --yu-button-disabled-border-color: var(--yu-border-color-light);
-  --yu-button-hover-text-color: var(--yu-color-primary);
-  --yu-button-hover-bg-color: var(--yu-color-primary-light-9);
-  --yu-button-hover-border-color: var(--yu-color-primary-light-7);
+  --yu-button-font-weight: var(--yu-font-weight-primary, 500);
+  --yu-button-border-color: var(--yu-border-color, #dcdfe6);
+  --yu-button-bg-color: var(--yu-fill-color-blank, #ffffff);
+  --yu-button-text-color: var(--yu-text-color-regular, #606266);
+  --yu-button-disabled-text-color: var(--yu-disabled-text-color, #c0c4cc);
+  --yu-button-disabled-bg-color: var(--yu-fill-color-blank, #ffffff);
+  --yu-button-disabled-border-color: var(--yu-border-color-light, #e4e7ed);
+  --yu-button-hover-text-color: var(--yu-color-primary, #409eff);
+  --yu-button-hover-bg-color: var(--yu-color-primary-light-9, #ecf5ff);
+  --yu-button-hover-border-color: var(--yu-color-primary-light-7, #c6e2ff);
   --yu-button-active-text-color: var(--yu-button-hover-text-color);
-  --yu-button-active-border-color: var(--yu-color-primary);
+  --yu-button-active-border-color: var(--yu-color-primary, #409eff);
   --yu-button-active-bg-color: var(--yu-button-hover-bg-color);
-  --yu-button-outline-color: var(--yu-color-primary-light-5);
-  --yu-button-active-color: var(--yu-text-color-primary);
+  --yu-button-outline-color: var(--yu-color-primary-light-5, #a0cfff);
+  --yu-button-active-color: var(--yu-text-color-primary, #303133);
 }
+
 .yu-button {
   display: inline-flex;
   justify-content: center;
@@ -27,100 +28,239 @@
   text-align: center;
   box-sizing: border-box;
   outline: none;
-  transition: .1s;
+  transition: 0.1s;
   font-weight: var(--yu-button-font-weight);
   user-select: none;
   vertical-align: middle;
   -webkit-appearance: none;
   background-color: var(--yu-button-bg-color);
-  border: var(--yu-border);
-  border-color: var(--yu-button-border-color);
+  border: 1px solid var(--yu-button-border-color);
   padding: 8px 15px;
-  font-size: var(--yu-font-size-base);
-  border-radius: var(--yu-border-radius-base);
-  & + & {
-    margin-left: 12px;
-  }
-  &:hover,
-  &:focus {
-    color: var(--yu-button-hover-text-color);
-    border-color: var(--yu-button-hover-border-color);
-    background-color: var(--yu-button-hover-bg-color);
-    outline: none;    
-  }
-  &:active {
-    color: var(--yu-button-active-text-color);
-    border-color: var(--yu-button-active-border-color);
-    background-color: var(--yu-button-active-bg-color);
-    outline: none;
-  }
-  &.is-plain {
-    --yu-button-hover-text-color: var(--yu-color-primary);
-    --yu-button-hover-bg-color: var(--yu-fill-color-blank);
-    --yu-button-hover-border-color: var(--yu-color-primary);    
-  }
-  /*round*/
-  &.is-round {
-    border-radius: var(--yu-border-radius-round);
-  }
-  /*circle*/
-  &.is-circle {
-    border-radius: 50%;
-    padding: 8px;
-  }
-  /*disabled*/
-  &.is-disabled, &.is-disabled:hover, &.is-disabled:focus, 
-  &[disabled], &[disabled]:hover, &[disabled]:focus 
-  {
-    color: var(--yu-button-disabled-text-color);
-    cursor: not-allowed;
-    background-image: none;
-    background-color: var(--yu-button-disabled-bg-color);
-    border-color: var(--yu-button-disabled-border-color);
-  }
-  /* 当class是yu-icon，并且后面是span时，margin增大 */
-  [class*=yu-icon] + span {
-    margin-left: 6px;
-  }
-}
-@each $val in primary,success,warning,info,danger {
-  .yu-button--$(val) {
-    --yu-button-text-color: var(--yu-color-white);
-    --yu-button-bg-color: var(--yu-color-$(val));
-    --yu-button-border-color: var(--yu-color-$(val));
-    --yu-button-outline-color: var(--yu-color-$(val)-light-5);
-    --yu-button-active-color: var(--yu-color-$(val)-dark-2);
-    --yu-button-hover-text-color: var(--yu-color-white);
-    --yu-button-hover-bg-color: var(--yu-color-$(val)-light-3);
-    --yu-button-hover-border-color: var(--yu-color-$(val)-light-3);
-    --yu-button-active-bg-color: var(--yu-color-$(val)-dark-2);
-    --yu-button-active-border-color: var(--yu-color-$(val)-dark-2);
-    --yu-button-disabled-text-color: var(--yu-color-white);
-    --yu-button-disabled-bg-color: var(--yu-color-$(val)-light-5);
-    --yu-button-disabled-border-color: var(--yu-color-$(val)-light-5);
-  }
-  .yu-button--$(val).is-plain {
-    --yu-button-text-color: var(--yu-color-$(val));
-    --yu-button-bg-color: var(--yu-color-$(val)-light-9);
-    --yu-button-border-color: var(--yu-color-$(val)-light-5);
-    --yu-button-hover-text-color: var(--yu-color-white);
-    --yu-button-hover-bg-color: var(--yu-color-$(val));
-    --yu-button-hover-border-color: var(--yu-color-$(val));
-    --yu-button-active-text-color: var(--yu-color-white);
-  }
-}
-.yu-button--large {
-  --yu-button-size: 40px;
-  height: var(--yu-button-size);
-  padding: 12px 19px;
-  font-size: var(--yu-font-size-base);
-  border-radius: var(--yu-border-radius-base);
-}
-.yu-button--small {
-  --yu-button-size: 24px;
-  height: var(--yu-button-size);
-  padding: 5px 11px;
-  font-size: 12px;
-  border-radius: calc(var(--yu-border-radius-base) - 1px);
+  font-size: 14px;
+  border-radius: 4px;
 }
 
+.yu-button+.yu-button {
+  margin-left: 12px;
+}
+
+.yu-button:hover,
+.yu-button:focus {
+  color: var(--yu-button-hover-text-color);
+  border-color: var(--yu-button-hover-border-color);
+  background-color: var(--yu-button-hover-bg-color);
+  outline: none;
+}
+
+.yu-button:active {
+  color: var(--yu-button-active-text-color);
+  border-color: var(--yu-button-active-border-color);
+  background-color: var(--yu-button-active-bg-color);
+  outline: none;
+}
+
+.yu-button.is-plain {
+  --yu-button-hover-text-color: var(--yu-color-primary, #409eff);
+  --yu-button-hover-bg-color: var(--yu-fill-color-blank, #ffffff);
+  --yu-button-hover-border-color: var(--yu-color-primary, #409eff);
+}
+
+/* round */
+.yu-button.is-round {
+  border-radius: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* circle */
+.yu-button.is-circle {
+  border-radius: 50%;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+}
+
+/* 添加圆形按钮的尺寸变体 */
+.yu-button--large.is-circle {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+.yu-button--small.is-circle {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+}
+
+/* disabled */
+.yu-button.is-disabled,
+.yu-button.is-disabled:hover,
+.yu-button.is-disabled:focus,
+.yu-button[disabled],
+.yu-button[disabled]:hover,
+.yu-button[disabled]:focus {
+  color: var(--yu-button-disabled-text-color);
+  cursor: not-allowed;
+  background-image: none;
+  background-color: var(--yu-button-disabled-bg-color);
+  border-color: var(--yu-button-disabled-border-color);
+}
+
+/* Icon spacing */
+.yu-button [class*=yu-icon]+span {
+  margin-left: 6px;
+}
+
+/* Types */
+.yu-button--primary {
+  --yu-button-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-bg-color: var(--yu-color-primary, #409eff);
+  --yu-button-border-color: var(--yu-color-primary, #409eff);
+  --yu-button-outline-color: var(--yu-color-primary-light-5, #a0cfff);
+  --yu-button-active-color: var(--yu-color-primary-dark-2, #337ecc);
+  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-hover-bg-color: var(--yu-color-primary-light-3, #79bbff);
+  --yu-button-hover-border-color: var(--yu-color-primary-light-3, #79bbff);
+  --yu-button-active-bg-color: var(--yu-color-primary-dark-2, #337ecc);
+  --yu-button-active-border-color: var(--yu-color-primary-dark-2, #337ecc);
+  --yu-button-disabled-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-disabled-bg-color: var(--yu-color-primary-light-5, #a0cfff);
+  --yu-button-disabled-border-color: var(--yu-color-primary-light-5, #a0cfff);
+}
+
+.yu-button--success {
+  --yu-button-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-bg-color: var(--yu-color-success, #67c23a);
+  --yu-button-border-color: var(--yu-color-success, #67c23a);
+  --yu-button-outline-color: var(--yu-color-success-light-5, #b3e19d);
+  --yu-button-active-color: var(--yu-color-success-dark-2, #529b2e);
+  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-hover-bg-color: var(--yu-color-success-light-3, #95d475);
+  --yu-button-hover-border-color: var(--yu-color-success-light-3, #95d475);
+  --yu-button-active-bg-color: var(--yu-color-success-dark-2, #529b2e);
+  --yu-button-active-border-color: var(--yu-color-success-dark-2, #529b2e);
+  --yu-button-disabled-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-disabled-bg-color: var(--yu-color-success-light-5, #b3e19d);
+  --yu-button-disabled-border-color: var(--yu-color-success-light-5, #b3e19d);
+}
+
+.yu-button--warning {
+  --yu-button-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-bg-color: var(--yu-color-warning, #e6a23c);
+  --yu-button-border-color: var(--yu-color-warning, #e6a23c);
+  --yu-button-outline-color: var(--yu-color-warning-light-5, #f3d19e);
+  --yu-button-active-color: var(--yu-color-warning-dark-2, #b88230);
+  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-hover-bg-color: var(--yu-color-warning-light-3, #eebe77);
+  --yu-button-hover-border-color: var(--yu-color-warning-light-3, #eebe77);
+  --yu-button-active-bg-color: var(--yu-color-warning-dark-2, #b88230);
+  --yu-button-active-border-color: var(--yu-color-warning-dark-2, #b88230);
+  --yu-button-disabled-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-disabled-bg-color: var(--yu-color-warning-light-5, #f3d19e);
+  --yu-button-disabled-border-color: var(--yu-color-warning-light-5, #f3d19e);
+}
+
+.yu-button--danger {
+  --yu-button-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-bg-color: var(--yu-color-danger, #f56c6c);
+  --yu-button-border-color: var(--yu-color-danger, #f56c6c);
+  --yu-button-outline-color: var(--yu-color-danger-light-5, #fab6b6);
+  --yu-button-active-color: var(--yu-color-danger-dark-2, #c45656);
+  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-hover-bg-color: var(--yu-color-danger-light-3, #f89898);
+  --yu-button-hover-border-color: var(--yu-color-danger-light-3, #f89898);
+  --yu-button-active-bg-color: var(--yu-color-danger-dark-2, #c45656);
+  --yu-button-active-border-color: var(--yu-color-danger-dark-2, #c45656);
+  --yu-button-disabled-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-disabled-bg-color: var(--yu-color-danger-light-5, #fab6b6);
+  --yu-button-disabled-border-color: var(--yu-color-danger-light-5, #fab6b6);
+}
+
+.yu-button--info {
+  --yu-button-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-bg-color: var(--yu-color-info, #909399);
+  --yu-button-border-color: var(--yu-color-info, #909399);
+  --yu-button-outline-color: var(--yu-color-info-light-5, #c8c9cc);
+  --yu-button-active-color: var(--yu-color-info-dark-2, #73767a);
+  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-hover-bg-color: var(--yu-color-info-light-3, #b1b3b8);
+  --yu-button-hover-border-color: var(--yu-color-info-light-3, #b1b3b8);
+  --yu-button-active-bg-color: var(--yu-color-info-dark-2, #73767a);
+  --yu-button-active-border-color: var(--yu-color-info-dark-2, #73767a);
+  --yu-button-disabled-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-disabled-bg-color: var(--yu-color-info-light-5, #c8c9cc);
+  --yu-button-disabled-border-color: var(--yu-color-info-light-5, #c8c9cc);
+}
+
+/* Plain variants */
+.yu-button--primary.is-plain {
+  --yu-button-text-color: var(--yu-color-primary, #409eff);
+  --yu-button-bg-color: var(--yu-color-primary-light-9, #ecf5ff);
+  --yu-button-border-color: var(--yu-color-primary-light-5, #a0cfff);
+  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-hover-bg-color: var(--yu-color-primary, #409eff);
+  --yu-button-hover-border-color: var(--yu-color-primary, #409eff);
+  --yu-button-active-text-color: var(--yu-color-white, #ffffff);
+}
+
+.yu-button--success.is-plain {
+  --yu-button-text-color: var(--yu-color-success, #67c23a);
+  --yu-button-bg-color: var(--yu-color-success-light-9, #f0f9eb);
+  --yu-button-border-color: var(--yu-color-success-light-5, #b3e19d);
+  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-hover-bg-color: var(--yu-color-success, #67c23a);
+  --yu-button-hover-border-color: var(--yu-color-success, #67c23a);
+  --yu-button-active-text-color: var(--yu-color-white, #ffffff);
+}
+
+.yu-button--warning.is-plain {
+  --yu-button-text-color: var(--yu-color-warning, #e6a23c);
+  --yu-button-bg-color: var(--yu-color-warning-light-9, #fdf6ec);
+  --yu-button-border-color: var(--yu-color-warning-light-5, #f3d19e);
+  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-hover-bg-color: var(--yu-color-warning, #e6a23c);
+  --yu-button-hover-border-color: var(--yu-color-warning, #e6a23c);
+  --yu-button-active-text-color: var(--yu-color-white, #ffffff);
+}
+
+.yu-button--danger.is-plain {
+  --yu-button-text-color: var(--yu-color-danger, #f56c6c);
+  --yu-button-bg-color: var(--yu-color-danger-light-9, #fef0f0);
+  --yu-button-border-color: var(--yu-color-danger-light-5, #fab6b6);
+  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-hover-bg-color: var(--yu-color-danger, #f56c6c);
+  --yu-button-hover-border-color: var(--yu-color-danger, #f56c6c);
+  --yu-button-active-text-color: var(--yu-color-white, #ffffff);
+}
+
+.yu-button--info.is-plain {
+  --yu-button-text-color: var(--yu-color-info, #909399);
+  --yu-button-bg-color: var(--yu-color-info-light-9, #f4f4f5);
+  --yu-button-border-color: var(--yu-color-info-light-5, #c8c9cc);
+  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
+  --yu-button-hover-bg-color: var(--yu-color-info, #909399);
+  --yu-button-hover-border-color: var(--yu-color-info, #909399);
+  --yu-button-active-text-color: var(--yu-color-white, #ffffff);
+}
+
+/* Button sizes */
+.yu-button--large {
+  height: 40px;
+  padding: 12px 19px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.yu-button--small {
+  height: 24px;
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+/* Loading style */
+.yu-button.is-loading {
+  opacity: 0.8;
+  cursor: default;
+}

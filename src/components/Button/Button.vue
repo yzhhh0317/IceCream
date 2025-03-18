@@ -15,14 +15,18 @@
         :autofocus="autofocus"
         :type="nativeType"
     >
-    <Icon icon="spinner" spin v-if="loading" />
-    <Icon :icon="icon" v-if="icon" />
-        <span><slot></slot></span>
+        <span class="yu-button__loading" v-if="loading">
+            <Icon icon="spinner" spin />
+        </span>
+        <span class="yu-button__icon" v-if="icon && !loading">
+            <Icon :icon="icon" />
+        </span>
+        <slot name="icon"></slot>
+        <span class="yu-button__text" v-if="$slots.default"><slot></slot></span>
     </button>
 </template>
 
 <script setup lang="ts">
-
 import { ref } from 'vue'
 import type { ButtonProps } from './types'//意味着我们只是导入类型，而不是实际的代码
 import Icon from '../Icon/Icon.vue';
@@ -40,20 +44,28 @@ const _ref=ref<HTMLButtonElement>()
 defineExpose({
     ref:_ref
 })
-
-//为了防止都叫button存在重复，所以改个名字
-// const __name='ZhButton';
-// const ZhButton= defineComponent({
-//     name:__name
-//     props:buttonProps
-// })
-
-
 </script>
 
-<style scoped>
-/* .yu-button{
-    /* --main-bg-color:yellow; 也可以通过自定义进行修改 */
-    /* background-color: var(--yu-bg-color);
-} */ 
+<style>
+.yu-button__icon,
+.yu-button__loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yu-button__loading + .yu-button__text,
+.yu-button__icon + .yu-button__text {
+  margin-left: 6px;
+}
+
+.yu-button.is-circle .yu-button__icon,
+.yu-button.is-circle .yu-button__loading {
+  margin: 0;
+}
+
+.yu-button.is-loading {
+  position: relative;
+  pointer-events: none;
+}
 </style>

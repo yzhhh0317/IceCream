@@ -24,28 +24,27 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Home', link: '/' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      },
-      {
-        text:'Basic基础组件',
+        text:'Basic 基础组件',
         items:[
-          {text:'Button',link:'/components/button'}
+          {text:'Button 按钮',link:'/components/button'},
+          {text:'Icon 图标',link:'/components/icon'},
         ]
       },
       {
-        text:'Form表单组件',
+        text:'Form 表单组件',
         items:[
           {text:'Input',link:'/components/input'}
+        ]
+      },
+      {
+        text:'Data 数据展示',
+        items:[
+          {text:'Collapse',link:'/components/collapse'}
         ]
       }
     ],

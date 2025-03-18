@@ -4,22 +4,21 @@ layout: home
 
 hero:
   name: "IceCream UI"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  text: "Vue3组件库"
+  tagline: 简洁、易用、美观的UI组件库
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 组件文档
+      link: /components/button
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: GitHub
+      link: https://github.com/yzhhh0317/v-element
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 简洁易用
+    details: 设计简单明了，降低使用成本，提升开发效率
+  - title: 基于Vue3
+    details: 使用Vue3 Composition API，支持TypeScript
+  - title: 主题定制
+    details: 基于CSS变量设计，方便定制主题样式
 ---
-

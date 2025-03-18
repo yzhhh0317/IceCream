@@ -1,0 +1,243 @@
+.yu-input {
+  --yu-input-text-color: var(--yu-text-color-regular, #606266);
+  --yu-input-border: var(--yu-border, 1px solid #dcdfe6);
+  --yu-input-hover-border: var(--yu-border-color-hover, #c0c4cc);
+  --yu-input-focus-border: var(--yu-color-primary, #409eff);
+  --yu-input-transparent-border: 0 0 0 1px transparent inset;
+  --yu-input-border-color: var(--yu-border-color, #dcdfe6);
+  --yu-input-border-radius: var(--yu-border-radius-base, 4px);
+  --yu-input-bg-color: var(--yu-fill-color-blank, #ffffff);
+  --yu-input-icon-color: var(--yu-text-color-placeholder, #a8abb2);
+  --yu-input-placeholder-color: var(--yu-text-color-placeholder, #c0c4cc);
+  --yu-input-hover-border-color: var(--yu-border-color-hover, #c0c4cc);
+  --yu-input-clear-hover-color: var(--yu-text-color-secondary, #909399);
+  --yu-input-focus-border-color: var(--yu-color-primary, #409eff);
+}
+
+.yu-input {
+  --yu-input-height: var(--yu-component-size, 32px);
+  position: relative;
+  font-size: var(--yu-font-size-base, 14px);
+  display: inline-flex;
+  width: 100%;
+  line-height: var(--yu-input-height);
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.yu-input.is-disabled {
+  cursor: not-allowed;
+}
+
+.yu-input.is-disabled .yu-input__wrapper {
+  background-color: var(--yu-disabled-bg-color, #f5f7fa);
+  box-shadow: 0 0 0 1px var(--yu-disabled-border-color, #e4e7ed) inset;
+}
+
+.yu-input.is-disabled .yu-input__inner {
+  color: var(--yu-disabled-text-color, #c0c4cc);
+  -webkit-text-fill-color: var(--yu-disabled-text-color, #c0c4cc);
+  cursor: not-allowed;
+}
+
+.yu-input.is-disabled .yu-textarea__wrapper {
+  background-color: var(--yu-disabled-bg-color, #f5f7fa);
+  box-shadow: 0 0 0 1px var(--yu-disabled-border-color, #e4e7ed) inset;
+  color: var(--yu-disabled-text-color, #c0c4cc);
+  -webkit-text-fill-color: var(--yu-disabled-text-color, #c0c4cc);
+  cursor: not-allowed;
+}
+
+.yu-input.is-prepend>.yu-input__wrapper {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.yu-input.is-append>.yu-input__wrapper {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.yu-input--large {
+  --yu-input-height: var(--yu-component-size-large, 47px);
+  font-size: 14px;
+}
+
+.yu-input--large .yu-input__wrapper {
+  padding: 1px 15px;
+}
+
+.yu-input--large .yu-input__wrapper .yu-input__inner {
+  --yu-input-inner-height: calc(var(--yu-input-height, 40px) - 2px);
+}
+
+.yu-input--small {
+  --yu-input-height: var(--yu-component-size-small, 36px);
+  font-size: 12px;
+}
+
+.yu-input--small .yu-input__wrapper {
+  padding: 1px 7px;
+}
+
+.yu-input--small .yu-input__wrapper .yu-input__inner {
+  --yu-input-inner-height: calc(var(--yu-input-height, 24px) - 2px);
+}
+
+.yu-input__prefix,
+.yu-input__suffix {
+  display: inline-flex;
+  white-space: nowrap;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  height: 100%;
+  text-align: center;
+  color: var(--yu-input-icon-color, var(--yu-text-color-placeholder, #a8abb2));
+  transition: all var(--yu-transition-duration, 0.3s);
+}
+
+.yu-input__prefix> :first-child {
+  margin-left: 0px !important;
+}
+
+.yu-input__prefix> :last-child {
+  margin-right: 8px !important;
+}
+
+.yu-input__suffix> :first-child {
+  margin-left: 8px !important;
+}
+
+.yu-input__suffix> :last-child {
+  margin-right: 0px !important;
+}
+
+/* 前置/后置元素样式 */
+.yu-input__prepend,
+.yu-input__append {
+  background-color: var(--yu-fill-color-light, #f5f7fa);
+  color: var(--yu-color-info, #909399);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  border-radius: var(--yu-input-border-radius, 4px);
+  padding: 0 15px;
+  white-space: nowrap;
+  border: 1px solid var(--yu-input-border-color, #dcdfe6);
+  font-size: inherit;
+}
+
+.yu-input__prepend {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.yu-input__append {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.yu-input--textarea {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: bottom;
+  font-size: var(--yu-font-size-base, 14px);
+}
+
+.yu-textarea__wrapper {
+  position: relative;
+  display: block;
+  resize: vertical;
+  padding: 5px 11px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  color: var(--yu-input-text-color, var(--yu-text-color-regular, #606266));
+  background-color: var(--yu-input-bg-color, var(--yu-fill-color-blank, #ffffff));
+  background-image: none;
+  -webkit-appearance: none;
+  border: 1px solid var(--yu-input-border-color, #dcdfe6);
+  border-radius: var(--yu-input-border-radius, 4px);
+  transition: border-color 0.2s;
+  min-height: 80px;
+}
+
+.yu-textarea__wrapper:focus {
+  outline: none;
+  border-color: var(--yu-input-focus-border-color, #409eff);
+}
+
+.yu-textarea__wrapper::placeholder {
+  color: var(--yu-input-placeholder-color, #c0c4cc);
+}
+
+.yu-input__wrapper {
+  display: inline-flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  background-color: var(--yu-input-bg-color, var(--yu-fill-color-blank, #ffffff));
+  background-image: none;
+  border-radius: var(--yu-input-border-radius, 4px);
+  transition: border-color 0.2s;
+  border: 1px solid var(--yu-input-border-color, #dcdfe6);
+}
+
+.yu-input__wrapper:hover {
+  border-color: var(--yu-input-hover-border-color, #c0c4cc);
+}
+
+.yu-input__wrapper.is-focus,
+.yu-input__wrapper:focus-within {
+  border-color: var(--yu-input-focus-border-color, #409eff);
+}
+
+.yu-input__wrapper .yu-input__inner {
+  --yu-input-inner-height: calc(var(--yu-input-height, 32px) - 2px);
+  width: 100%;
+  flex-grow: 1;
+  -webkit-appearance: none;
+  color: var(--yu-input-text-color, var(--yu-text-color-regular, #606266));
+  font-size: inherit;
+  height: var(--yu-input-inner-height);
+  line-height: var(--yu-input-inner-height);
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+}
+
+.yu-input__wrapper .yu-input__inner::placeholder {
+  color: var(--yu-input-placeholder-color, #c0c4cc);
+}
+
+.yu-input__wrapper .yu-icon {
+  height: inherit;
+  line-height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all var(--yu-transition-duration, 0.3s);
+  margin-left: 8px;
+}
+
+.yu-input__wrapper .yu-input__clear,
+.yu-input__wrapper .yu-input__password {
+  color: var(--yu-input-icon-color, #a8abb2);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.yu-input__wrapper .yu-input__clear:hover,
+.yu-input__wrapper .yu-input__password:hover {
+  color: var(--yu-input-clear-hover-color, #909399);
+}

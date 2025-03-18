@@ -2,16 +2,26 @@
 import { ref } from 'vue'
 import Input from '@/components/Input/Input.vue'
 
-const password = ref('')
+const input1 = ref('可清空的输入框')
+const input2 = ref('可清空的文本域')
 </script>
 <template>
   <div class="demo-container">
     <div class="input-group">
       <Input 
-        v-model="password" 
-        type="password" 
-        placeholder="请输入密码" 
-        show-password
+        v-model="input1" 
+        placeholder="请输入内容" 
+        clearable 
+        class="demo-input"
+      />
+    </div>
+    
+    <div class="input-group">
+      <Input 
+        v-model="input2" 
+        type="textarea" 
+        placeholder="请输入内容" 
+        clearable 
         class="demo-input"
       />
     </div>
