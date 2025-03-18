@@ -64,13 +64,7 @@ const activeNames = ref(["1"]);
 
 提供多种类型、状态和尺寸的按钮。
 
-```vue
-<yu-button>默认按钮</yu-button>
-<yu-button type="primary">主要按钮</yu-button>
-<yu-button type="success">成功按钮</yu-button>
-<yu-button type="warning">警告按钮</yu-button>
-<yu-button type="danger">危险按钮</yu-button>
-```
+<preview path="../docs/demo/Button/Basic.vue" title="基础用法" description="Button 组件的基础用法"></preview>
 
 ### Input 输入框
 

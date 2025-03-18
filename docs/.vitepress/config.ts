@@ -13,8 +13,11 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('../../src', import.meta.url))
     },
+  },  
   },
-  },
+  head: [
+    ['link', { rel: 'stylesheet', href: '/custom.css' }]
+  ],
   markdown: {
     config(md) {
       md.use(containerPreview)
