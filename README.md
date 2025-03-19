@@ -67,7 +67,7 @@ npm install
 
 <script setup>
 import { ref } from "vue";
-import { Button, Input, Collapse, CollapseItem } from "icecream-ui";
+import { Button, Input, Collapse, CollapseItem } from "IceCream-UI";
 
 const input = ref("");
 const activeNames = ref(["1"]);
