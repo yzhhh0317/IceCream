@@ -4,6 +4,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
 
 export default defineConfig({
+  base: '/IceCream-UI/',
   title: "IceCream UI",
   description: "A VitePress Site",
   head: [
