@@ -15,12 +15,19 @@ IceCream UI 是一款基于 Vue3 开发的 UI 组件库，使用 Composition API
 - **📱 响应式设计**：适配不同屏幕尺寸
 - **🔍 详细文档**：提供完善的使用文档和示例
 
-## 已实现组件
+## 组件预览
 
-- Button 按钮
-- Input 输入框
-- Collapse 折叠面板
-- Icon 图标
+### Button 按钮
+
+提供多种类型、状态和尺寸的按钮。
+
+![Button 组件预览](/src/assets/button.png)
+
+### Icon 图标
+
+丰富的图标集合，支持自定义颜色和大小。
+
+![Icon 组件预览](/src/assets/Icon.gif)
 
 ## 快速开始
 
@@ -48,43 +55,11 @@ npm install
 
 <script setup>
 import { ref } from "vue";
-import Button from "@/components/Button/Button.vue";
-import Input from "@/components/Input/Input.vue";
-import Collapse from "@/components/Collapse/Collapse.vue";
-import CollapseItem from "@/components/Collapse/CollapseItem.vue";
+import { Button, Input, Collapse, CollapseItem } from "icecream-ui";
 
 const input = ref("");
 const activeNames = ref(["1"]);
 </script>
-```
-
-## 组件预览
-
-### Button 按钮
-
-提供多种类型、状态和尺寸的按钮。
-
-<preview path="../docs/demo/Button/Basic.vue" title="基础用法" description="Button 组件的基础用法"></preview>
-
-### Input 输入框
-
-支持各种类型的输入框、文本域和复合型输入框。
-
-```vue
-<yu-input v-model="input" placeholder="请输入内容"></yu-input>
-<yu-input type="password" show-password placeholder="请输入密码"></yu-input>
-<yu-input type="textarea" placeholder="请输入多行文本"></yu-input>
-```
-
-### Collapse 折叠面板
-
-可以折叠/展开的内容区域，支持手风琴模式。
-
-```vue
-<yu-collapse v-model="activeNames">
-  <yu-collapse-item name="1" title="折叠面板1">内容区域1</yu-collapse-item>
-  <yu-collapse-item name="2" title="折叠面板2">内容区域2</yu-collapse-item>
-</yu-collapse>
 ```
 
 ## 开发指南
@@ -125,6 +100,10 @@ IceCream-UI/
 ├── package.json          # 包配置
 └── README.md             # 项目说明
 ```
+
+## 在线演示
+
+查看[在线演示文档](https://your-demo-url.com)了解更多组件细节和用法示例。
 
 ## 贡献指南
 

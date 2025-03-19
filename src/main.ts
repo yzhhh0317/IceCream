@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import App from './App.vue'
 
 library.add(fas)
-import './styles/index.css'
+import './styles/reset.css'
+import './styles/vars.css'  
+import './styles/index.css' 
 console.log(App.render?.toString());
 
 createApp(App)
