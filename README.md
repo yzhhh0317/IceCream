@@ -27,7 +27,19 @@ IceCream UI 是一款基于 Vue3 开发的 UI 组件库，使用 Composition API
 
 丰富的图标集合，支持自定义颜色和大小。
 
-![Icon 组件预览](/src/assets/Icon.gif)
+![Icon 组件预览](/src/assets/Icon.png)
+
+### Input 输入框
+
+支持各种类型的输入框、文本域和复合型输入框。
+
+![Input 组件预览](/src/assets/Input.png)
+
+### Collapse 折叠面板
+
+可以折叠/展开的内容区域，支持手风琴模式。
+
+![Collapse 组件预览](/src/assets/Collapse.png)
 
 ## 快速开始
 

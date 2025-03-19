@@ -55,12 +55,12 @@ library.add(faSearch, faEdit, faCheck, faUpload, faDownload, faShare)
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 16px 0;
+  padding: 16px 26px;
 }
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 26px;
   margin-bottom: 0;
   align-items: center;
 }

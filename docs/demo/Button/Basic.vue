@@ -63,7 +63,7 @@ library.add(faSearch, faEdit, faCheck, faBell, faStar, faTrash)
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 20px 0;
+  padding: 0px;
 }
 
 .section-title {

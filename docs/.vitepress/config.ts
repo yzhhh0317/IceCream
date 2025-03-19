@@ -3,11 +3,13 @@ import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
 import { containerPreview, componentPreview } from '@vitepress-demo-preview/plugin'
 
-
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "IceCream UI",
   description: "A VitePress Site",
+  head: [
+    ['link', { rel: 'stylesheet', href: '/custom.css' }],
+    ['link', { rel: 'icon', href: '/Icecream.png' }]
+  ],
   vite:{
     resolve: {
     alias: {
@@ -15,9 +17,6 @@ export default defineConfig({
     },
   },  
   },
-  head: [
-    ['link', { rel: 'stylesheet', href: '/custom.css' }]
-  ],
   markdown: {
     config(md) {
       md.use(containerPreview)
@@ -25,11 +24,10 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    logo: '/Icecream.png',
     nav: [
       { text: 'Home', link: '/' }
     ],
-
     sidebar: [
       {
         text:'Basic 基础组件',

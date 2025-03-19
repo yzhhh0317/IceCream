@@ -1,266 +1,558 @@
-.yu-button {
-  --yu-button-font-weight: var(--yu-font-weight-primary, 500);
-  --yu-button-border-color: var(--yu-border-color, #dcdfe6);
-  --yu-button-bg-color: var(--yu-fill-color-blank, #ffffff);
-  --yu-button-text-color: var(--yu-text-color-regular, #606266);
-  --yu-button-disabled-text-color: var(--yu-disabled-text-color, #c0c4cc);
-  --yu-button-disabled-bg-color: var(--yu-fill-color-blank, #ffffff);
-  --yu-button-disabled-border-color: var(--yu-border-color-light, #e4e7ed);
-  --yu-button-hover-text-color: var(--yu-color-primary, #409eff);
-  --yu-button-hover-bg-color: var(--yu-color-primary-light-9, #ecf5ff);
-  --yu-button-hover-border-color: var(--yu-color-primary-light-7, #c6e2ff);
-  --yu-button-active-text-color: var(--yu-button-hover-text-color);
-  --yu-button-active-border-color: var(--yu-color-primary, #409eff);
-  --yu-button-active-bg-color: var(--yu-button-hover-bg-color);
-  --yu-button-outline-color: var(--yu-color-primary-light-5, #a0cfff);
-  --yu-button-active-color: var(--yu-text-color-primary, #303133);
+/* 草莓冰淇淋主题 - 按钮样式 */
+:root {
+  /* 草莓冰淇淋主色调 */
+  --yu-color-white: #ffffff;
+  --yu-color-black: #000000;
+  --yu-color-primary: #ff6b81;
+  /* 草莓粉红色 */
+  --yu-color-success: #9ddc9d;
+  /* 薄荷绿色 */
+  --yu-color-warning: #ffcda5;
+  /* 香草黄色 */
+  --yu-color-danger: #ff4d6d;
+  /* 深草莓红色 */
+  --yu-color-info: #c7b9ff;
+  /* 蓝莓色 */
+
+  /* 颜色的亮色和暗色变体 */
+  --yu-color-primary-light-3: #ff8d9c;
+  --yu-color-primary-light-5: #ffadb9;
+  --yu-color-primary-light-7: #ffcbd4;
+  --yu-color-primary-light-8: #ffdce3;
+  --yu-color-primary-light-9: #fff0f3;
+  --yu-color-primary-dark-2: #d94d62;
+
+  --yu-color-success-light-3: #b7e6b7;
+  --yu-color-success-light-5: #c9ecc9;
+  --yu-color-success-light-7: #dcf3dc;
+  --yu-color-success-light-8: #e6f7e6;
+  --yu-color-success-light-9: #f6fcf6;
+  --yu-color-success-dark-2: #7eb57e;
+
+  --yu-color-warning-light-3: #ffdcbf;
+  --yu-color-warning-light-5: #ffe2ca;
+  --yu-color-warning-light-7: #fff1e6;
+  --yu-color-warning-light-8: #fff5ee;
+  --yu-color-warning-light-9: #fffaf5;
+  --yu-color-warning-dark-2: #d9aa82;
+
+  --yu-color-danger-light-3: #ff798f;
+  --yu-color-danger-light-5: #ff9dae;
+  --yu-color-danger-light-7: #ffbecb;
+  --yu-color-danger-light-8: #ffd6df;
+  --yu-color-danger-light-9: #ffecf0;
+  --yu-color-danger-dark-2: #d93258;
+
+  --yu-color-info-light-3: #d7cdff;
+  --yu-color-info-light-5: #e1d9ff;
+  --yu-color-info-light-7: #ede9ff;
+  --yu-color-info-light-8: #f3f0ff;
+  --yu-color-info-light-9: #f9f8ff;
+  --yu-color-info-dark-2: #a395d9;
+
+  /* 背景色 - 奶油质感 */
+  --yu-bg-color: #fffbf6;
+  --yu-bg-color-page: #fff5f7;
+  --yu-bg-color-overlay: #fffbf6;
+
+  /* 文本颜色 - 巧克力系列 */
+  --yu-text-color-primary: #5d4037;
+  --yu-text-color-regular: #795548;
+  --yu-text-color-secondary: #8d6e63;
+  --yu-text-color-placeholder: #bcaaa4;
+  --yu-text-color-disabled: #d7ccc8;
+
+  /* 边框颜色 - 华夫饼质感 */
+  --yu-border-color: #f0ddd5;
+  --yu-border-color-light: #f3e5dc;
+  --yu-border-color-lighter: #f7ece5;
+  --yu-border-color-extra-light: #faf3ef;
+  --yu-border-color-dark: #e8d6cb;
+  --yu-border-color-darker: #e0cbbe;
+
+  /* 填充颜色 - 不同口味的冰淇淋 */
+  --yu-fill-color: #fff0f3;
+  --yu-fill-color-light: #fff5f7;
+  --yu-fill-color-lighter: #fffafc;
+  --yu-fill-color-extra-light: #fffcfd;
+  --yu-fill-color-dark: #ffe6eb;
+  --yu-fill-color-darker: #ffdce3;
+  --yu-fill-color-blank: #ffffff;
+
+  /* 边框样式 - 圆润如冰淇淋 */
+  --yu-border-width: 1px;
+  --yu-border-style: solid;
+  --yu-border-color-hover: var(--yu-text-color-disabled);
+  --yu-border: var(--yu-border-width) var(--yu-border-style) var(--yu-border-color);
+  --yu-border-radius-base: 8px;
+  /* 更圆润的边角 */
+  --yu-border-radius-small: 6px;
+  --yu-border-radius-round: 24px;
+  --yu-border-radius-circle: 100%;
+
+  /* 禁用状态 - 融化的冰淇淋 */
+  --yu-disabled-bg-color: var(--yu-fill-color-light);
+  --yu-disabled-text-color: var(--yu-text-color-placeholder);
+  --yu-disabled-border-color: var(--yu-border-color-light);
+
+  /* 阴影效果 - 如同糖浆滴落 */
+  --yu-box-shadow-light: 0 2px 12px 0 rgba(255, 107, 129, 0.1);
+  --yu-box-shadow: 0 2px 8px rgba(255, 107, 129, 0.15);
+  --yu-box-shadow-dark: 0 2px 10px rgba(255, 107, 129, 0.2);
 }
 
+/* 按钮基本样式 */
 .yu-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   line-height: 1;
-  height: 32px;
+  height: 36px;
   white-space: nowrap;
   cursor: pointer;
-  color: var(--yu-button-text-color);
+  color: #795548;
   text-align: center;
   box-sizing: border-box;
   outline: none;
-  transition: 0.1s;
-  font-weight: var(--yu-button-font-weight);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-weight: 500;
   user-select: none;
   vertical-align: middle;
   -webkit-appearance: none;
-  background-color: var(--yu-button-bg-color);
-  border: 1px solid var(--yu-button-border-color);
-  padding: 8px 15px;
+  background-color: #ffffff;
+  border: 1px solid #f0ddd5;
+  padding: 8px 16px;
   font-size: 14px;
-  border-radius: 4px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(255, 107, 129, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 .yu-button+.yu-button {
   margin-left: 12px;
 }
 
-.yu-button:hover,
-.yu-button:focus {
-  color: var(--yu-button-hover-text-color);
-  border-color: var(--yu-button-hover-border-color);
-  background-color: var(--yu-button-hover-bg-color);
+/* 按钮悬浮效果 */
+.yu-button:hover:not(.is-disabled):not([disabled]),
+.yu-button:focus:not(.is-disabled):not([disabled]) {
+  color: #ff6b81;
+  border-color: #ffcbd4;
+  background-color: #fff0f3;
   outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 129, 0.2);
 }
 
-.yu-button:active {
-  color: var(--yu-button-active-text-color);
-  border-color: var(--yu-button-active-border-color);
-  background-color: var(--yu-button-active-bg-color);
+/* 按钮按下效果 */
+.yu-button:active:not(.is-disabled):not([disabled]) {
+  color: #ff6b81;
+  border-color: #ff6b81;
+  background-color: #fff0f3;
   outline: none;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 107, 129, 0.15);
 }
 
-.yu-button.is-plain {
-  --yu-button-hover-text-color: var(--yu-color-primary, #409eff);
-  --yu-button-hover-bg-color: var(--yu-fill-color-blank, #ffffff);
-  --yu-button-hover-border-color: var(--yu-color-primary, #409eff);
+/* 普通样式 */
+.yu-button.is-plain:not(.is-disabled):not([disabled]) {
+  background-color: transparent;
+  box-shadow: none;
 }
 
-/* round */
+.yu-button.is-plain:hover:not(.is-disabled):not([disabled]),
+.yu-button.is-plain:focus:not(.is-disabled):not([disabled]) {
+  color: #ff6b81;
+  background-color: #ffffff;
+  border-color: #ff6b81;
+}
+
+/* 圆角按钮 */
 .yu-button.is-round {
-  border-radius: 20px;
+  border-radius: 24px;
   padding-left: 16px;
   padding-right: 16px;
 }
 
-/* circle */
+/* 圆形按钮 */
 .yu-button.is-circle {
   border-radius: 50%;
   padding: 8px;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
 }
 
-/* 添加圆形按钮的尺寸变体 */
-.yu-button--large.is-circle {
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-}
-
-.yu-button--small.is-circle {
-  width: 24px;
-  height: 24px;
-  padding: 4px;
-}
-
-/* disabled */
+/* 禁用状态 */
 .yu-button.is-disabled,
 .yu-button.is-disabled:hover,
 .yu-button.is-disabled:focus,
 .yu-button[disabled],
 .yu-button[disabled]:hover,
 .yu-button[disabled]:focus {
-  color: var(--yu-button-disabled-text-color);
+  color: #d7ccc8;
   cursor: not-allowed;
+  background-color: #ffffff;
+  border-color: #f3e5dc;
+  box-shadow: none;
+  transform: none;
+  opacity: 0.7;
   background-image: none;
-  background-color: var(--yu-button-disabled-bg-color);
-  border-color: var(--yu-button-disabled-border-color);
 }
 
-/* Icon spacing */
-.yu-button [class*=yu-icon]+span {
-  margin-left: 6px;
+/* 图标样式 */
+.yu-button__icon,
+.yu-button__loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Types */
+.yu-button__loading+.yu-button__text,
+.yu-button__icon+.yu-button__text {
+  margin-left: 2px;
+}
+
+.yu-button.is-circle .yu-button__icon,
+.yu-button.is-circle .yu-button__loading {
+  margin: 0;
+}
+
+/* 加载状态 */
+.yu-button.is-loading {
+  pointer-events: none;
+  position: relative;
+  opacity: 0.8;
+}
+
+/* 按钮类型样式 */
+/* 主要按钮 */
 .yu-button--primary {
-  --yu-button-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-bg-color: var(--yu-color-primary, #409eff);
-  --yu-button-border-color: var(--yu-color-primary, #409eff);
-  --yu-button-outline-color: var(--yu-color-primary-light-5, #a0cfff);
-  --yu-button-active-color: var(--yu-color-primary-dark-2, #337ecc);
-  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-hover-bg-color: var(--yu-color-primary-light-3, #79bbff);
-  --yu-button-hover-border-color: var(--yu-color-primary-light-3, #79bbff);
-  --yu-button-active-bg-color: var(--yu-color-primary-dark-2, #337ecc);
-  --yu-button-active-border-color: var(--yu-color-primary-dark-2, #337ecc);
-  --yu-button-disabled-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-disabled-bg-color: var(--yu-color-primary-light-5, #a0cfff);
-  --yu-button-disabled-border-color: var(--yu-color-primary-light-5, #a0cfff);
+  color: #ffffff;
+  background-color: #ff6b81;
+  border-color: #ff6b81;
+  background-image: linear-gradient(135deg, #ff6b81, #ff8d9c);
+  box-shadow: 0 4px 12px rgba(255, 107, 129, 0.25);
 }
 
-.yu-button--success {
-  --yu-button-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-bg-color: var(--yu-color-success, #67c23a);
-  --yu-button-border-color: var(--yu-color-success, #67c23a);
-  --yu-button-outline-color: var(--yu-color-success-light-5, #b3e19d);
-  --yu-button-active-color: var(--yu-color-success-dark-2, #529b2e);
-  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-hover-bg-color: var(--yu-color-success-light-3, #95d475);
-  --yu-button-hover-border-color: var(--yu-color-success-light-3, #95d475);
-  --yu-button-active-bg-color: var(--yu-color-success-dark-2, #529b2e);
-  --yu-button-active-border-color: var(--yu-color-success-dark-2, #529b2e);
-  --yu-button-disabled-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-disabled-bg-color: var(--yu-color-success-light-5, #b3e19d);
-  --yu-button-disabled-border-color: var(--yu-color-success-light-5, #b3e19d);
+.yu-button--primary:hover:not(.is-disabled):not([disabled]),
+.yu-button--primary:focus:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #ff8d9c;
+  border-color: #ff8d9c;
+  background-image: linear-gradient(135deg, #ff7c8f, #ff9dae);
 }
 
-.yu-button--warning {
-  --yu-button-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-bg-color: var(--yu-color-warning, #e6a23c);
-  --yu-button-border-color: var(--yu-color-warning, #e6a23c);
-  --yu-button-outline-color: var(--yu-color-warning-light-5, #f3d19e);
-  --yu-button-active-color: var(--yu-color-warning-dark-2, #b88230);
-  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-hover-bg-color: var(--yu-color-warning-light-3, #eebe77);
-  --yu-button-hover-border-color: var(--yu-color-warning-light-3, #eebe77);
-  --yu-button-active-bg-color: var(--yu-color-warning-dark-2, #b88230);
-  --yu-button-active-border-color: var(--yu-color-warning-dark-2, #b88230);
-  --yu-button-disabled-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-disabled-bg-color: var(--yu-color-warning-light-5, #f3d19e);
-  --yu-button-disabled-border-color: var(--yu-color-warning-light-5, #f3d19e);
+.yu-button--primary:active:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #d94d62;
+  border-color: #d94d62;
+  background-image: linear-gradient(135deg, #d94d62, #e95d72);
 }
 
-.yu-button--danger {
-  --yu-button-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-bg-color: var(--yu-color-danger, #f56c6c);
-  --yu-button-border-color: var(--yu-color-danger, #f56c6c);
-  --yu-button-outline-color: var(--yu-color-danger-light-5, #fab6b6);
-  --yu-button-active-color: var(--yu-color-danger-dark-2, #c45656);
-  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-hover-bg-color: var(--yu-color-danger-light-3, #f89898);
-  --yu-button-hover-border-color: var(--yu-color-danger-light-3, #f89898);
-  --yu-button-active-bg-color: var(--yu-color-danger-dark-2, #c45656);
-  --yu-button-active-border-color: var(--yu-color-danger-dark-2, #c45656);
-  --yu-button-disabled-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-disabled-bg-color: var(--yu-color-danger-light-5, #fab6b6);
-  --yu-button-disabled-border-color: var(--yu-color-danger-light-5, #fab6b6);
-}
-
-.yu-button--info {
-  --yu-button-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-bg-color: var(--yu-color-info, #909399);
-  --yu-button-border-color: var(--yu-color-info, #909399);
-  --yu-button-outline-color: var(--yu-color-info-light-5, #c8c9cc);
-  --yu-button-active-color: var(--yu-color-info-dark-2, #73767a);
-  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-hover-bg-color: var(--yu-color-info-light-3, #b1b3b8);
-  --yu-button-hover-border-color: var(--yu-color-info-light-3, #b1b3b8);
-  --yu-button-active-bg-color: var(--yu-color-info-dark-2, #73767a);
-  --yu-button-active-border-color: var(--yu-color-info-dark-2, #73767a);
-  --yu-button-disabled-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-disabled-bg-color: var(--yu-color-info-light-5, #c8c9cc);
-  --yu-button-disabled-border-color: var(--yu-color-info-light-5, #c8c9cc);
-}
-
-/* Plain variants */
 .yu-button--primary.is-plain {
-  --yu-button-text-color: var(--yu-color-primary, #409eff);
-  --yu-button-bg-color: var(--yu-color-primary-light-9, #ecf5ff);
-  --yu-button-border-color: var(--yu-color-primary-light-5, #a0cfff);
-  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-hover-bg-color: var(--yu-color-primary, #409eff);
-  --yu-button-hover-border-color: var(--yu-color-primary, #409eff);
-  --yu-button-active-text-color: var(--yu-color-white, #ffffff);
+  color: #ff6b81;
+  background-color: #fff0f3;
+  border-color: #ffadb9;
+  background-image: none;
+}
+
+.yu-button--primary.is-plain:hover:not(.is-disabled):not([disabled]),
+.yu-button--primary.is-plain:focus:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #ff6b81;
+  border-color: #ff6b81;
+  background-image: linear-gradient(135deg, #ff6b81, #ff8d9c);
+}
+
+.yu-button--primary.is-disabled,
+.yu-button--primary.is-disabled:hover,
+.yu-button--primary.is-disabled:focus,
+.yu-button--primary[disabled],
+.yu-button--primary[disabled]:hover,
+.yu-button--primary[disabled]:focus {
+  color: #ffffff;
+  background-color: #ffadb9;
+  border-color: #ffadb9;
+  background-image: none;
+}
+
+/* 成功按钮 */
+.yu-button--success {
+  color: #ffffff;
+  background-color: #9ddc9d;
+  border-color: #9ddc9d;
+  background-image: linear-gradient(135deg, #9ddc9d, #b7e6b7);
+  box-shadow: 0 4px 12px rgba(157, 220, 157, 0.25);
+}
+
+.yu-button--success:hover:not(.is-disabled):not([disabled]),
+.yu-button--success:focus:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #b7e6b7;
+  border-color: #b7e6b7;
+  background-image: linear-gradient(135deg, #aae2aa, #c5ebc5);
+}
+
+.yu-button--success:active:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #7eb57e;
+  border-color: #7eb57e;
+  background-image: linear-gradient(135deg, #7eb57e, #8fc58f);
 }
 
 .yu-button--success.is-plain {
-  --yu-button-text-color: var(--yu-color-success, #67c23a);
-  --yu-button-bg-color: var(--yu-color-success-light-9, #f0f9eb);
-  --yu-button-border-color: var(--yu-color-success-light-5, #b3e19d);
-  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-hover-bg-color: var(--yu-color-success, #67c23a);
-  --yu-button-hover-border-color: var(--yu-color-success, #67c23a);
-  --yu-button-active-text-color: var(--yu-color-white, #ffffff);
+  color: #9ddc9d;
+  background-color: #f6fcf6;
+  border-color: #c9ecc9;
+  background-image: none;
+}
+
+.yu-button--success.is-plain:hover:not(.is-disabled):not([disabled]),
+.yu-button--success.is-plain:focus:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #9ddc9d;
+  border-color: #9ddc9d;
+  background-image: linear-gradient(135deg, #9ddc9d, #b7e6b7);
+}
+
+.yu-button--success.is-disabled,
+.yu-button--success.is-disabled:hover,
+.yu-button--success.is-disabled:focus,
+.yu-button--success[disabled],
+.yu-button--success[disabled]:hover,
+.yu-button--success[disabled]:focus {
+  color: #ffffff;
+  background-color: #c9ecc9;
+  border-color: #c9ecc9;
+  background-image: none;
+}
+
+/* 警告按钮 */
+.yu-button--warning {
+  color: #ffffff;
+  background-color: #ffcda5;
+  border-color: #ffcda5;
+  background-image: linear-gradient(135deg, #ffcda5, #ffdcbf);
+  box-shadow: 0 4px 12px rgba(255, 205, 165, 0.25);
+}
+
+.yu-button--warning:hover:not(.is-disabled):not([disabled]),
+.yu-button--warning:focus:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #ffdcbf;
+  border-color: #ffdcbf;
+  background-image: linear-gradient(135deg, #ffd6b3, #ffe5cc);
+}
+
+.yu-button--warning:active:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #d9aa82;
+  border-color: #d9aa82;
+  background-image: linear-gradient(135deg, #d9aa82, #e4bf9d);
 }
 
 .yu-button--warning.is-plain {
-  --yu-button-text-color: var(--yu-color-warning, #e6a23c);
-  --yu-button-bg-color: var(--yu-color-warning-light-9, #fdf6ec);
-  --yu-button-border-color: var(--yu-color-warning-light-5, #f3d19e);
-  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-hover-bg-color: var(--yu-color-warning, #e6a23c);
-  --yu-button-hover-border-color: var(--yu-color-warning, #e6a23c);
-  --yu-button-active-text-color: var(--yu-color-white, #ffffff);
+  color: #ffcda5;
+  background-color: #fffaf5;
+  border-color: #ffe2ca;
+  background-image: none;
+}
+
+.yu-button--warning.is-plain:hover:not(.is-disabled):not([disabled]),
+.yu-button--warning.is-plain:focus:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #ffcda5;
+  border-color: #ffcda5;
+  background-image: linear-gradient(135deg, #ffcda5, #ffdcbf);
+}
+
+.yu-button--warning.is-disabled,
+.yu-button--warning.is-disabled:hover,
+.yu-button--warning.is-disabled:focus,
+.yu-button--warning[disabled],
+.yu-button--warning[disabled]:hover,
+.yu-button--warning[disabled]:focus {
+  color: #ffffff;
+  background-color: #ffe2ca;
+  border-color: #ffe2ca;
+  background-image: none;
+}
+
+/* 危险按钮 */
+.yu-button--danger {
+  color: #ffffff;
+  background-color: #ff4d6d;
+  border-color: #ff4d6d;
+  background-image: linear-gradient(135deg, #ff4d6d, #ff798f);
+  box-shadow: 0 4px 12px rgba(255, 77, 109, 0.25);
+}
+
+.yu-button--danger:hover:not(.is-disabled):not([disabled]),
+.yu-button--danger:focus:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #ff798f;
+  border-color: #ff798f;
+  background-image: linear-gradient(135deg, #ff617f, #ff8c9e);
+}
+
+.yu-button--danger:active:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #d93258;
+  border-color: #d93258;
+  background-image: linear-gradient(135deg, #d93258, #e44669);
 }
 
 .yu-button--danger.is-plain {
-  --yu-button-text-color: var(--yu-color-danger, #f56c6c);
-  --yu-button-bg-color: var(--yu-color-danger-light-9, #fef0f0);
-  --yu-button-border-color: var(--yu-color-danger-light-5, #fab6b6);
-  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-hover-bg-color: var(--yu-color-danger, #f56c6c);
-  --yu-button-hover-border-color: var(--yu-color-danger, #f56c6c);
-  --yu-button-active-text-color: var(--yu-color-white, #ffffff);
+  color: #ff4d6d;
+  background-color: #ffecf0;
+  border-color: #ff9dae;
+  background-image: none;
+}
+
+.yu-button--danger.is-plain:hover:not(.is-disabled):not([disabled]),
+.yu-button--danger.is-plain:focus:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #ff4d6d;
+  border-color: #ff4d6d;
+  background-image: linear-gradient(135deg, #ff4d6d, #ff798f);
+}
+
+.yu-button--danger.is-disabled,
+.yu-button--danger.is-disabled:hover,
+.yu-button--danger.is-disabled:focus,
+.yu-button--danger[disabled],
+.yu-button--danger[disabled]:hover,
+.yu-button--danger[disabled]:focus {
+  color: #ffffff;
+  background-color: #ff9dae;
+  border-color: #ff9dae;
+  background-image: none;
+}
+
+/* 信息按钮 */
+.yu-button--info {
+  color: #ffffff;
+  background-color: #c7b9ff;
+  border-color: #c7b9ff;
+  background-image: linear-gradient(135deg, #c7b9ff, #d7cdff);
+  box-shadow: 0 4px 12px rgba(199, 185, 255, 0.25);
+}
+
+.yu-button--info:hover:not(.is-disabled):not([disabled]),
+.yu-button--info:focus:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #d7cdff;
+  border-color: #d7cdff;
+  background-image: linear-gradient(135deg, #cfc3ff, #ded5ff);
+}
+
+.yu-button--info:active:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #a395d9;
+  border-color: #a395d9;
+  background-image: linear-gradient(135deg, #a395d9, #b4a8e0);
 }
 
 .yu-button--info.is-plain {
-  --yu-button-text-color: var(--yu-color-info, #909399);
-  --yu-button-bg-color: var(--yu-color-info-light-9, #f4f4f5);
-  --yu-button-border-color: var(--yu-color-info-light-5, #c8c9cc);
-  --yu-button-hover-text-color: var(--yu-color-white, #ffffff);
-  --yu-button-hover-bg-color: var(--yu-color-info, #909399);
-  --yu-button-hover-border-color: var(--yu-color-info, #909399);
-  --yu-button-active-text-color: var(--yu-color-white, #ffffff);
+  color: #c7b9ff;
+  background-color: #f9f8ff;
+  border-color: #e1d9ff;
+  background-image: none;
 }
 
-/* Button sizes */
+.yu-button--info.is-plain:hover:not(.is-disabled):not([disabled]),
+.yu-button--info.is-plain:focus:not(.is-disabled):not([disabled]) {
+  color: #ffffff;
+  background-color: #c7b9ff;
+  border-color: #c7b9ff;
+  background-image: linear-gradient(135deg, #c7b9ff, #d7cdff);
+}
+
+.yu-button--info.is-disabled,
+.yu-button--info.is-disabled:hover,
+.yu-button--info.is-disabled:focus,
+.yu-button--info[disabled],
+.yu-button--info[disabled]:hover,
+.yu-button--info[disabled]:focus {
+  color: #ffffff;
+  background-color: #e1d9ff;
+  border-color: #e1d9ff;
+  background-image: none;
+}
+
+/* 按钮尺寸 */
 .yu-button--large {
-  height: 40px;
-  padding: 12px 19px;
-  font-size: 14px;
-  border-radius: 4px;
+  height: 44px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 14px;
+}
+
+.yu-button--large.is-circle {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
 }
 
 .yu-button--small {
-  height: 24px;
-  padding: 5px 11px;
+  height: 28px;
+  padding: 5px 12px;
   font-size: 12px;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
-/* Loading style */
-.yu-button.is-loading {
-  opacity: 0.8;
-  cursor: default;
+.yu-button--small.is-circle {
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+}
+
+/* 冰淇淋特殊效果 - 装饰元素 */
+.yu-button--primary:not(.is-plain):not(.is-disabled):not([disabled])::before,
+.yu-button--success:not(.is-plain):not(.is-disabled):not([disabled])::before,
+.yu-button--warning:not(.is-plain):not(.is-disabled):not([disabled])::before,
+.yu-button--danger:not(.is-plain):not(.is-disabled):not([disabled])::before,
+.yu-button--info:not(.is-plain):not(.is-disabled):not([disabled])::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image:
+    radial-gradient(circle at 10% 15%, rgba(255, 255, 255, 0.2) 1%, transparent 2%),
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.2) 0.5%, transparent 1.5%),
+    radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.2) 0.8%, transparent 1.8%),
+    radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.2) 0.6%, transparent 1.6%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* 创建融化效果的动画 */
+@keyframes melt {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(1px) scale(1.01, 0.99);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.yu-button:not(.is-disabled):not([disabled]):hover::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 10%;
+  right: 10%;
+  height: 6px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+  border-radius: 50%;
+  filter: blur(4px);
+  z-index: -1;
+  animation: melt 3s ease-in-out infinite;
 }

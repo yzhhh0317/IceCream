@@ -1,1 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.76 226.69"><path d="M161.096.001l-30.225 52.351L100.647.001H-.005l130.877 226.688L261.749.001z" fill="#41b883"/><path d="M161.096.001l-30.225 52.351L100.647.001H52.346l78.526 136.01L209.398.001z" fill="#34495e"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- 背景圆形 -->
+  <circle cx="100" cy="100" r="95" fill="#fff5f7" />
+  
+  <!-- 冰淇淋甜筒 -->
+  <path d="M75 140 L100 70 L125 140 Z" fill="#e0a868" stroke="#bd8c4e" stroke-width="2" />
+  
+  <!-- 草莓冰淇淋球 -->
+  <circle cx="100" cy="70" r="30" fill="#ff6b81" stroke="#ff4d6d" stroke-width="2" />
+  
+  <!-- 冰淇淋球反光效果 -->
+  <ellipse cx="90" cy="60" rx="12" ry="8" fill="#ffadb9" opacity="0.6" transform="rotate(-25 90 60)" />
+  
+  <!-- 冰淇淋球纹理 -->
+  <circle cx="85" cy="75" r="4" fill="#ff4d6d" opacity="0.5" />
+  <circle cx="105" cy="55" r="3" fill="#ff4d6d" opacity="0.5" />
+  <circle cx="115" cy="75" r="3.5" fill="#ff4d6d" opacity="0.5" />
+  <circle cx="95" cy="85" r="2.5" fill="#ff4d6d" opacity="0.5" />
+  
+  <!-- 糖针装饰 -->
+  <rect x="92" y="45" width="2" height="8" fill="#ffffff" transform="rotate(15 92 45)" />
+  <rect x="102" y="47" width="2" height="6" fill="#9ddc9d" transform="rotate(-20 102 47)" />
+  <rect x="110" y="53" width="2" height="7" fill="#ffcda5" transform="rotate(40 110 53)" />
+  <rect x="82" y="55" width="2" height="6" fill="#c7b9ff" transform="rotate(-35 82 55)" />
+    
+  <!-- 融化的冰淇淋滴落 -->
+  <path d="M97 97 Q100 110, 103 97" fill="#ff6b81" />
+  <path d="M85 103 Q88 115, 91 103" fill="#ff6b81" />
+  <path d="M112 101 Q115 120, 118 101" fill="#ff6b81" />
+  
+</svg>

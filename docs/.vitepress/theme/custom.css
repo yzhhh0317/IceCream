@@ -1,24 +1,45 @@
+/* 草莓冰淇淋主题 */
 :root {
-    --vp-c-brand: var(--yu-color-primary);
-    --vp-c-brand-light: var(--yu-color-primary-light-3);
-    --vp-c-brand-lighter: var(--yu-color-primary-light-5);
-    --vp-c-brand-dark: var(--yu-color-primary-dark-2);
-    --vp-c-brand-darker: #265F99;
+    --vp-c-brand: #ff6b81;
+    --vp-c-brand-light: #ff8d9c;
+    --vp-c-brand-lighter: #ffadb9;
+    --vp-c-brand-dark: #d94d62;
+    --vp-c-brand-darker: #c23a50;
 
-    --component-preview-bg: var(--vp-code-block-bg);
-    --component-preview-soft: var(--vp-code-block-bg-light);
+    --vp-c-bg: #fffbf6;
+    --vp-c-bg-soft: #fff5f7;
+
+    --vp-c-text-1: #5d4037;
+    --vp-c-text-2: #795548;
 }
 
-body {
-    color: var(--vp-c-text-1);
+/* 导航栏Logo的特殊样式 */
+.VPNavBarTitle .logo {
+    height: 32px !important;
+    animation: float 3s ease-in-out infinite;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    color: var(--vp-c-text-1);
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 按钮样式 */
+.VPButton.brand {
+    background-color: var(--vp-c-brand);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 107, 129, 0.25);
+    transition: all 0.3s ease;
+}
+
+.VPButton.brand:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 129, 0.35);
 }

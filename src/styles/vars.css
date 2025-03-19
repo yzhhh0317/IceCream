@@ -1,63 +1,87 @@
 :root {
-    /* colors */
+    /* 冰淇淋主题色彩系统 */
     --yu-color-white: #ffffff;
     --yu-color-black: #000000;
-    --colors: (primary: #409eff,
-            success: #67c23a,
-            warning: #e6a23c,
-            danger: #f56c6c,
-            info: #909399);
+
+    /* 草莓冰淇淋主色调 */
+    --colors: (primary: #ff6b81,
+            /* 草莓粉红色 */
+            success: #9ddc9d,
+            /* 薄荷绿色 */
+            warning: #ffcda5,
+            /* 香草黄色 */
+            danger: #ff4d6d,
+            /* 深草莓红色 */
+            info: #c7b9ff
+            /* 蓝莓色 */
+        );
 
     @each $val, $color in var(--colors) {
-        --yu-color-$(val): $(color);
+        --yu-color-$(val): $(
+            color
+        );
+
         @for $i from 3 to 9 by 2 {
             --yu-color-$(val)-light-$(i): mix(#fff, $(
                     color),
-                    .$(i))
+                .$(
+                i))
         }
-        --yu-color-$(val)-light-8: mix(#fff, $(color), .8);
+
+            --yu-color-$(val)-light-8: mix(#fff, $(color), .8
+        );
         --yu-color-$(val)-dark-2: mix(#000, $(color), .2);
     }
-    --yu-bg-color: #ffffff;
-    --yu-bg-color-page: #f2f3f5;
-    --yu-bg-color-overlay: #ffffff;
-    --yu-text-color-primary: #303133;
-    --yu-text-color-regular: #606266;
-    --yu-text-color-secondary: #909399;
-    --yu-text-color-placeholder: #a8abb2;
-    --yu-text-color-disabled: #c0c4cc;
-    --yu-border-color: #dcdfe6;
-    --yu-border-color-light: #e4e7ed;
-    --yu-border-color-lighter: #ebeef5;
-    --yu-border-color-extra-light: #f2f6fc;
-    --yu-border-color-dark: #d4d7de;
-    --yu-border-color-darker: #cdd0d6;
-    --yu-fill-color: #f0f2f5;
-    --yu-fill-color-light: #f5f7fa;
-    --yu-fill-color-lighter: #fafafa;
-    --yu-fill-color-extra-light: #fafcff;
-    --yu-fill-color-dark: #ebedf0;
-    --yu-fill-color-darker: #e6e8eb;
+
+    /* 背景色 - 奶油质感 */
+    --yu-bg-color: #fffbf6;
+    --yu-bg-color-page: #fff5f7;
+    --yu-bg-color-overlay: #fffbf6;
+
+    /* 文本颜色 - 巧克力系列 */
+    --yu-text-color-primary: #5d4037;
+    --yu-text-color-regular: #795548;
+    --yu-text-color-secondary: #8d6e63;
+    --yu-text-color-placeholder: #bcaaa4;
+    --yu-text-color-disabled: #d7ccc8;
+
+    /* 边框颜色 - 华夫饼质感 */
+    --yu-border-color: #f0ddd5;
+    --yu-border-color-light: #f3e5dc;
+    --yu-border-color-lighter: #f7ece5;
+    --yu-border-color-extra-light: #faf3ef;
+    --yu-border-color-dark: #e8d6cb;
+    --yu-border-color-darker: #e0cbbe;
+
+    /* 填充颜色 - 不同口味的冰淇淋 */
+    --yu-fill-color: #fff0f3;
+    --yu-fill-color-light: #fff5f7;
+    --yu-fill-color-lighter: #fffafc;
+    --yu-fill-color-extra-light: #fffcfd;
+    --yu-fill-color-dark: #ffe6eb;
+    --yu-fill-color-darker: #ffdce3;
     --yu-fill-color-blank: #ffffff;
 
-    /* border */
+    /* 边框样式 - 圆润如冰淇淋 */
     --yu-border-width: 1px;
     --yu-border-style: solid;
     --yu-border-color-hover: var(--yu-text-color-disabled);
     --yu-border: var(--yu-border-width) var(--yu-border-style) var(--yu-border-color);
-    --yu-border-radius-base: 4px;
-    --yu-border-radius-small: 2px;
-    --yu-border-radius-round: 20px;
+    --yu-border-radius-base: 8px;
+    /* 更圆润的边角 */
+    --yu-border-radius-small: 6px;
+    --yu-border-radius-round: 24px;
     --yu-border-radius-circle: 100%;
 
-    /*font*/
+    /* 字体设置 - 可爱圆润的字体 */
     --yu-font-size-extra-large: 20px;
     --yu-font-size-large: 18px;
     --yu-font-size-medium: 16px;
     --yu-font-size-base: 14px;
     --yu-font-size-small: 13px;
     --yu-font-size-extra-small: 12px;
-    --yu-font-family: "Helvetica Neue",
+    --yu-font-family: "Comic Sans MS",
+    "Helvetica Neue",
     Helvetica,
     "PingFang SC",
     "Hiragino Sans GB",
@@ -67,13 +91,29 @@
     sans-serif;
     --yu-font-weight-primary: 500;
 
-    /*disabled*/
+    /* 禁用状态 - 融化的冰淇淋 */
     --yu-disabled-bg-color: var(--yu-fill-color-light);
     --yu-disabled-text-color: var(--yu-text-color-placeholder);
     --yu-disabled-border-color: var(--yu-border-color-light);
 
-    /*animation*/
-    --yu-transition-duration: .3s;
-    --yu-transition-duration-fast: .2s;
+    /* 动画效果 - 像冰淇淋融化一样柔和 */
+    --yu-transition-duration: .4s;
+    --yu-transition-duration-fast: .25s;
 
+    /* 阴影效果 - 如同糖浆滴落 */
+    --yu-box-shadow-light: 0 2px 12px 0 rgba(255, 107, 129, 0.1);
+    --yu-box-shadow: 0 2px 8px rgba(255, 107, 129, 0.15);
+    --yu-box-shadow-dark: 0 2px 10px rgba(255, 107, 129, 0.2);
+
+    /* 特殊冰淇淋效果颜色 */
+    --yu-color-sprinkles: #ffd3e0;
+    /* 糖针色 */
+    --yu-color-cherry: #e91e63;
+    /* 樱桃色 */
+    --yu-color-vanilla: #fff0db;
+    /* 香草色 */
+    --yu-color-chocolate: #795548;
+    /* 巧克力色 */
+    --yu-color-cone: #e0a868;
+    /* 甜筒色 */
 }

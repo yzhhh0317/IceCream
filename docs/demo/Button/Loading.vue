@@ -37,6 +37,7 @@ const handleClick = (loader) => {
   flex-direction: column;
   gap: 20px;
   padding-top: 10px;
+  padding-left: 26px;
 }
 .row {
   display: flex;

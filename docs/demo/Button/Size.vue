@@ -64,7 +64,7 @@ library.add(faSearch)
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px 0;
+  padding: 0px;
 }
 
 .section-title {
