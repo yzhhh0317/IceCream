@@ -1,5 +1,5 @@
 ---
-title: Icon | IceCream-UI
+title: Icon
 description: Icon 组件的文档
 ---
 

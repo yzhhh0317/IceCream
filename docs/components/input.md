@@ -1,5 +1,5 @@
 ---
-title: Input | IceCream-UI
+title: Input
 description: Input 组件的文档
 ---
 

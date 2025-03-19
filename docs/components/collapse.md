@@ -1,5 +1,5 @@
 ---
-title: Collapse | IceCream-UI
+title: Collapse
 description: Collapse 组件的文档
 ---
 
