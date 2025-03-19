@@ -21,7 +21,7 @@ IceCream UI 是一款基于 Vue3 开发的 UI 组件库，使用 Composition API
 
 提供多种类型、状态和尺寸的按钮。
 
-![Button 组件预览](/src/assets/Button.png)
+![Button 组件预览](/src/assets/buttonExample.png)
 
 ### Icon 图标
 
