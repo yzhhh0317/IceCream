@@ -46,7 +46,7 @@ IceCream UI 是一款基于 Vue3 开发的 UI 组件库，使用 Composition API
 ### 下载项目
 
 ```bash
-git clone https://github.com/your-username/IceCream-UI.git
+git clone https://github.com/your-username/IceCream.git
 cd IceCream-UI
 npm install
 ```
