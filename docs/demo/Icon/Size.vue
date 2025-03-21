@@ -87,7 +87,6 @@ library.add(faStar)
 <style scoped>
 .icon-size-demo {
   padding: 24px;
-  background-color: var(--yu-fill-color-blank);
   border-radius: 4px;
 }
 
@@ -120,7 +119,6 @@ library.add(faStar)
   flex-wrap: wrap;
   gap: 32px;
   padding: 20px;
-  background-color: var(--yu-fill-color-lighter);
   border-radius: 8px;
 }
 

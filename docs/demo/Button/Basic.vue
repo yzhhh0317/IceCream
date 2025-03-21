@@ -79,7 +79,6 @@ library.add(faSearch, faEdit, faCheck, faBell, faStar, faTrash)
   gap: 2px;
   margin-bottom: 0;
   align-items: center;
-  background-color: #fafafa;
   padding: 20px;
   border-radius: 4px;
 }

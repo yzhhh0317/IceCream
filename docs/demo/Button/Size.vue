@@ -88,7 +88,6 @@ library.add(faSearch)
 }
 
 .size-section {
-  background-color: #fafafa;
   padding: 24px;
   border-radius: 4px;
 }

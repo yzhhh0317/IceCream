@@ -91,7 +91,6 @@ import Input from '@/components/Input/Input.vue'
 }
 
 .size-container {
-  background-color: var(--yu-fill-color-lighter);
   padding: 20px;
   border-radius: 6px;
 }

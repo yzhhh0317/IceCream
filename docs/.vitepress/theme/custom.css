@@ -1,4 +1,4 @@
-/* 草莓冰淇淋主题 */
+/* 草莓冰淇淋主题 - 亮色模式 */
 :root {
     --vp-c-brand: #ff6b81;
     --vp-c-brand-light: #ff8d9c;
@@ -8,9 +8,82 @@
 
     --vp-c-bg: #fffbf6;
     --vp-c-bg-soft: #fff5f7;
+    --vp-c-bg-mute: #fff0f3;
+    --vp-c-bg-alt: #fffcfd;
+
+    --vp-c-divider: #f7ece5;
+    --vp-c-divider-light: #f0ddd5;
 
     --vp-c-text-1: #5d4037;
     --vp-c-text-2: #795548;
+    --vp-c-text-3: #8d6e63;
+    --vp-c-text-4: #bcaaa4;
+
+    --vp-c-border: #f0ddd5;
+    --vp-c-border-hover: #e0cbbe;
+
+    /* 组件特有颜色 */
+    --vp-button-brand-bg: var(--vp-c-brand);
+    --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+    --vp-button-brand-active-bg: var(--vp-c-brand-dark);
+
+    /* 自定义阴影 */
+    --vp-shadow-1: 0 1px 5px rgba(255, 107, 129, 0.1);
+    --vp-shadow-2: 0 3px 8px rgba(255, 107, 129, 0.1);
+    --vp-shadow-3: 0 5px 12px rgba(255, 107, 129, 0.15);
+    --vp-shadow-4: 0 9px 18px rgba(255, 107, 129, 0.18);
+    --vp-shadow-5: 0 12px 24px rgba(255, 107, 129, 0.2);
+}
+
+/* 草莓冰淇淋主题 - 暗色模式 */
+.dark {
+    --vp-c-brand: #ff8d9c;
+    --vp-c-brand-light: #ffadb9;
+    --vp-c-brand-lighter: #ffc1cb;
+    --vp-c-brand-dark: #ff6b81;
+    --vp-c-brand-darker: #ff4d6d;
+
+    --vp-c-bg: #1c1814;
+    /* 深巧克力色 */
+    --vp-c-bg-soft: #261e1c;
+    /* 略微柔和的深巧克力色 */
+    --vp-c-bg-mute: #2f2521;
+    /* 带有一点红棕色调的深色 */
+    --vp-c-bg-alt: #332622;
+    /* 更深的巧克力色 */
+
+    --vp-c-divider: #3d2e29;
+    /* 深色分隔线 */
+    --vp-c-divider-light: #4a3934;
+    /* 稍亮的分隔线 */
+
+    --vp-c-text-1: #fff0f3;
+    /* 非常明亮的粉红色调白色，几乎是白色 */
+    --vp-c-text-2: #ffd9e0;
+    /* 较亮的粉红色调 */
+    --vp-c-text-3: #ffc1cb;
+    /* 中等亮度的粉红色调 */
+    --vp-c-text-4: #ff8d9c;
+    /* 较暗的粉红色调 */
+
+    --vp-c-border: #4a3934;
+    /* 深色边框 */
+    --vp-c-border-hover: #5a453e;
+    /* 鼠标悬停时的边框颜色 */
+
+    --vp-button-brand-bg: var(--vp-c-brand);
+    --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+    --vp-button-brand-active-bg: var(--vp-c-brand-dark);
+
+    /* 自定义阴影 - 暗色模式 */
+    --vp-shadow-1: 0 1px 5px rgba(255, 141, 156, 0.15);
+    --vp-shadow-2: 0 3px 8px rgba(255, 141, 156, 0.15);
+    --vp-shadow-3: 0 5px 12px rgba(255, 141, 156, 0.18);
+    --vp-shadow-4: 0 9px 18px rgba(255, 141, 156, 0.22);
+    --vp-shadow-5: 0 12px 24px rgba(255, 141, 156, 0.25);
+
+    /* 按钮阴影 */
+    --button-shadow: 0 4px 12px rgba(255, 141, 156, 0.3);
 }
 
 /* 导航栏Logo的特殊样式 */
@@ -39,7 +112,117 @@
     transition: all 0.3s ease;
 }
 
+.dark .VPButton.brand {
+    box-shadow: var(--button-shadow);
+}
+
 .VPButton.brand:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(255, 107, 129, 0.35);
+}
+
+.dark .VPButton.brand:hover {
+    box-shadow: 0 6px 16px rgba(255, 141, 156, 0.4);
+}
+
+/* 文档内容样式增强 */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4,
+.vp-doc h5,
+.vp-doc h6 {
+    color: var(--vp-c-brand-dark);
+}
+
+.dark .vp-doc h1,
+.dark .vp-doc h2,
+.dark .vp-doc h3,
+.dark .vp-doc h4,
+.dark .vp-doc h5,
+.dark .vp-doc h6 {
+    color: var(--vp-c-brand);
+}
+
+/* 组件样式在暗色模式下的适配 */
+.dark .yu-button {
+    background-color: #261e1c;
+    border-color: #4a3934;
+    color: #fff0f3;
+}
+
+.dark .yu-button:not(.is-disabled):hover {
+    background-color: #332622;
+    border-color: #ff8d9c;
+}
+
+.dark .yu-button--primary {
+    background-color: #ff8d9c;
+    background-image: linear-gradient(135deg, #ff8d9c, #ffa3b1);
+    border-color: #ff8d9c;
+    color: #1c1814;
+}
+
+.dark .yu-button--success {
+    background-color: #9ddc9d;
+    background-image: linear-gradient(135deg, #9ddc9d, #b5e6b5);
+    border-color: #9ddc9d;
+    color: #1c1814;
+}
+
+.dark .yu-button--warning {
+    background-color: #ffcda5;
+    background-image: linear-gradient(135deg, #ffcda5, #ffd9b9);
+    border-color: #ffcda5;
+    color: #1c1814;
+}
+
+.dark .yu-button--danger {
+    background-color: #ff6b81;
+    background-image: linear-gradient(135deg, #ff6b81, #ff8399);
+    border-color: #ff6b81;
+    color: #1c1814;
+}
+
+.dark .yu-button--info {
+    background-color: #c7b9ff;
+    background-image: linear-gradient(135deg, #c7b9ff, #d4caff);
+    border-color: #c7b9ff;
+    color: #1c1814;
+}
+
+/* 代码块及其他增强 */
+.dark div[class*='language-'] {
+    background-color: #1a1411;
+}
+
+.dark .vp-doc th,
+.dark .vp-doc td {
+    border-color: #3d2e29;
+}
+
+.dark .vp-doc tr:nth-child(2n) {
+    background-color: #261e1c;
+}
+
+/* 演示容器样式 */
+.dark .demo-block {
+    background-color: #261e1c;
+    border-color: #3d2e29;
+}
+
+.dark .demo-block-control {
+    background-color: #261e1c;
+    border-top-color: #3d2e29;
+}
+
+/* 导航栏样式优化 */
+.dark .VPNavBar {
+    background-color: rgba(28, 24, 20, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+/* 页面过渡动画 */
+.VPContent {
+    transition: background-color 0.5s ease;
 }

@@ -87,7 +87,6 @@ code {
 }
 
 .limit-container {
-  background-color: var(--yu-fill-color-lighter);
   padding: 20px;
   border-radius: 6px;
 }

@@ -1,5 +1,5 @@
 :root {
-    /* 冰淇淋主题色彩系统 */
+    /* 冰淇淋主题色彩系统 - 亮色模式 */
     --yu-color-white: #ffffff;
     --yu-color-black: #000000;
 
@@ -21,99 +21,214 @@
             color
         );
 
-        @for $i from 3 to 9 by 2 {
-            --yu-color-$(val)-light-$(i): mix(#fff, $(
-                    color),
-                .$(
-                i))
-        }
-
-            --yu-color-$(val)-light-8: mix(#fff, $(color), .8
-        );
-        --yu-color-$(val)-dark-2: mix(#000, $(color), .2);
+    @for $i from 3 to 9 by 2 {
+        --yu-color-$(val)-light-$(i): mix(#fff, $(
+                color),
+            .$(
+            i))
     }
 
-    /* 背景色 - 奶油质感 */
-    --yu-bg-color: #fffbf6;
-    --yu-bg-color-page: #fff5f7;
-    --yu-bg-color-overlay: #fffbf6;
+    --yu-color-$(val)-light-8: mix(#fff, $(color), .8
+);
+--yu-color-$(val)-dark-2: mix(#000, $(color), .2);
+}
 
-    /* 文本颜色 - 巧克力系列 */
-    --yu-text-color-primary: #5d4037;
-    --yu-text-color-regular: #795548;
-    --yu-text-color-secondary: #8d6e63;
-    --yu-text-color-placeholder: #bcaaa4;
-    --yu-text-color-disabled: #d7ccc8;
+/* 背景色 - 奶油质感 */
+--yu-bg-color: #fffbf6;
+--yu-bg-color-page: #fff5f7;
+--yu-bg-color-overlay: #fffbf6;
 
-    /* 边框颜色 - 华夫饼质感 */
-    --yu-border-color: #f0ddd5;
-    --yu-border-color-light: #f3e5dc;
-    --yu-border-color-lighter: #f7ece5;
-    --yu-border-color-extra-light: #faf3ef;
-    --yu-border-color-dark: #e8d6cb;
-    --yu-border-color-darker: #e0cbbe;
+/* 文本颜色 - 巧克力系列 */
+--yu-text-color-primary: #5d4037;
+--yu-text-color-regular: #795548;
+--yu-text-color-secondary: #8d6e63;
+--yu-text-color-placeholder: #bcaaa4;
+--yu-text-color-disabled: #d7ccc8;
 
-    /* 填充颜色 - 不同口味的冰淇淋 */
-    --yu-fill-color: #fff0f3;
-    --yu-fill-color-light: #fff5f7;
-    --yu-fill-color-lighter: #fffafc;
-    --yu-fill-color-extra-light: #fffcfd;
-    --yu-fill-color-dark: #ffe6eb;
-    --yu-fill-color-darker: #ffdce3;
-    --yu-fill-color-blank: #ffffff;
+/* 边框颜色 - 华夫饼质感 */
+--yu-border-color: #f0ddd5;
+--yu-border-color-light: #f3e5dc;
+--yu-border-color-lighter: #f7ece5;
+--yu-border-color-extra-light: #faf3ef;
+--yu-border-color-dark: #e8d6cb;
+--yu-border-color-darker: #e0cbbe;
 
-    /* 边框样式 - 圆润如冰淇淋 */
-    --yu-border-width: 1px;
-    --yu-border-style: solid;
-    --yu-border-color-hover: var(--yu-text-color-disabled);
-    --yu-border: var(--yu-border-width) var(--yu-border-style) var(--yu-border-color);
-    --yu-border-radius-base: 8px;
-    /* 更圆润的边角 */
-    --yu-border-radius-small: 6px;
-    --yu-border-radius-round: 24px;
-    --yu-border-radius-circle: 100%;
+/* 填充颜色 - 不同口味的冰淇淋 */
+--yu-fill-color: #fff0f3;
+--yu-fill-color-light: #fff5f7;
+--yu-fill-color-lighter: #fffafc;
+--yu-fill-color-extra-light: #fffcfd;
+--yu-fill-color-dark: #ffe6eb;
+--yu-fill-color-darker: #ffdce3;
+--yu-fill-color-blank: #ffffff;
 
-    /* 字体设置 - 可爱圆润的字体 */
-    --yu-font-size-extra-large: 20px;
-    --yu-font-size-large: 18px;
-    --yu-font-size-medium: 16px;
-    --yu-font-size-base: 14px;
-    --yu-font-size-small: 13px;
-    --yu-font-size-extra-small: 12px;
-    --yu-font-family: "Comic Sans MS",
-    "Helvetica Neue",
-    Helvetica,
-    "PingFang SC",
-    "Hiragino Sans GB",
-    "Microsoft YaHei",
-    "\5fae\8f6f\96c5\9ed1",
-    Arial,
-    sans-serif;
-    --yu-font-weight-primary: 500;
+/* 边框样式 - 圆润如冰淇淋 */
+--yu-border-width: 1px;
+--yu-border-style: solid;
+--yu-border-color-hover: var(--yu-text-color-disabled);
+--yu-border: var(--yu-border-width) var(--yu-border-style) var(--yu-border-color);
+--yu-border-radius-base: 8px;
+/* 更圆润的边角 */
+--yu-border-radius-small: 6px;
+--yu-border-radius-round: 24px;
+--yu-border-radius-circle: 100%;
 
-    /* 禁用状态 - 融化的冰淇淋 */
-    --yu-disabled-bg-color: var(--yu-fill-color-light);
-    --yu-disabled-text-color: var(--yu-text-color-placeholder);
-    --yu-disabled-border-color: var(--yu-border-color-light);
+/* 字体设置 - 可爱圆润的字体 */
+--yu-font-size-extra-large: 20px;
+--yu-font-size-large: 18px;
+--yu-font-size-medium: 16px;
+--yu-font-size-base: 14px;
+--yu-font-size-small: 13px;
+--yu-font-size-extra-small: 12px;
+--yu-font-family: "Comic Sans MS",
+"Helvetica Neue",
+Helvetica,
+"PingFang SC",
+"Hiragino Sans GB",
+"Microsoft YaHei",
+"\5fae\8f6f\96c5\9ed1",
+Arial,
+sans-serif;
+--yu-font-weight-primary: 500;
 
-    /* 动画效果 - 像冰淇淋融化一样柔和 */
-    --yu-transition-duration: .4s;
-    --yu-transition-duration-fast: .25s;
+/* 禁用状态 - 融化的冰淇淋 */
+--yu-disabled-bg-color: var(--yu-fill-color-light);
+--yu-disabled-text-color: var(--yu-text-color-placeholder);
+--yu-disabled-border-color: var(--yu-border-color-light);
 
-    /* 阴影效果 - 如同糖浆滴落 */
-    --yu-box-shadow-light: 0 2px 12px 0 rgba(255, 107, 129, 0.1);
-    --yu-box-shadow: 0 2px 8px rgba(255, 107, 129, 0.15);
-    --yu-box-shadow-dark: 0 2px 10px rgba(255, 107, 129, 0.2);
+/* 动画效果 - 像冰淇淋融化一样柔和 */
+--yu-transition-duration: .4s;
+--yu-transition-duration-fast: .25s;
 
-    /* 特殊冰淇淋效果颜色 */
-    --yu-color-sprinkles: #ffd3e0;
-    /* 糖针色 */
-    --yu-color-cherry: #e91e63;
-    /* 樱桃色 */
-    --yu-color-vanilla: #fff0db;
-    /* 香草色 */
-    --yu-color-chocolate: #795548;
-    /* 巧克力色 */
-    --yu-color-cone: #e0a868;
-    /* 甜筒色 */
+/* 阴影效果 - 如同糖浆滴落 */
+--yu-box-shadow-light: 0 2px 12px 0 rgba(255, 107, 129, 0.1);
+--yu-box-shadow: 0 2px 8px rgba(255, 107, 129, 0.15);
+--yu-box-shadow-dark: 0 2px 10px rgba(255, 107, 129, 0.2);
+
+/* 特殊冰淇淋效果颜色 */
+--yu-color-sprinkles: #ffd3e0;
+/* 糖针色 */
+--yu-color-cherry: #e91e63;
+/* 樱桃色 */
+--yu-color-vanilla: #fff0db;
+/* 香草色 */
+--yu-color-chocolate: #795548;
+/* 巧克力色 */
+--yu-color-cone: #e0a868;
+/* 甜筒色 */
+}
+
+/* 暗色模式的变量定义 */
+.dark {
+    /* 暗色模式下的颜色调整 */
+    --yu-color-primary: #ff8d9c;
+    /* 更亮的草莓粉色 */
+    --yu-color-success: #b5e6b5;
+    /* 更亮的薄荷绿色 */
+    --yu-color-warning: #ffd9b9;
+    /* 更亮的香草黄色 */
+    --yu-color-danger: #ff8399;
+    /* 更亮的深草莓色 */
+    --yu-color-info: #d4caff;
+    /* 更亮的蓝莓色 */
+
+    /* 暗色模式下的背景色 - 深巧克力质感 */
+    --yu-bg-color: #1c1814;
+    /* 深巧克力色 */
+    --yu-bg-color-page: #261e1c;
+    /* 略微柔和的深巧克力 */
+    --yu-bg-color-overlay: #1c1814;
+
+    /* 暗色模式下的文本颜色 - 奶油系列 */
+    --yu-text-color-primary: #fff0f3;
+    /* 亮粉色调白色 */
+    --yu-text-color-regular: #ffd9e0;
+    /* 淡粉色 */
+    --yu-text-color-secondary: #ffc1cb;
+    /* 中粉色 */
+    --yu-text-color-placeholder: #ff8d9c;
+    /* 深粉色 */
+    --yu-text-color-disabled: #d46277;
+    /* 暗粉色 */
+
+    /* 暗色模式下的边框颜色 */
+    --yu-border-color: #4a3934;
+    --yu-border-color-light: #5a453e;
+    --yu-border-color-lighter: #6a5148;
+    --yu-border-color-extra-light: #7a5d52;
+    --yu-border-color-dark: #3d2e29;
+    --yu-border-color-darker: #2f2521;
+
+    /* 暗色模式下的填充颜色 */
+    --yu-fill-color: #261e1c;
+    --yu-fill-color-light: #2f2521;
+    --yu-fill-color-lighter: #332622;
+    --yu-fill-color-extra-light: #3a2b26;
+    --yu-fill-color-dark: #1f1916;
+    --yu-fill-color-darker: #1a1411;
+    --yu-fill-color-blank: #261e1c;
+
+    /* 暗色模式下的边框颜色悬停状态 */
+    --yu-border-color-hover: #7a5d52;
+
+    /* 暗色模式下的禁用状态 */
+    --yu-disabled-bg-color: #261e1c;
+    --yu-disabled-text-color: #966a76;
+    --yu-disabled-border-color: #3d2e29;
+
+    /* 暗色模式下的阴影效果 */
+    --yu-box-shadow-light: 0 2px 12px 0 rgba(255, 141, 156, 0.15);
+    --yu-box-shadow: 0 2px 8px rgba(255, 141, 156, 0.2);
+    --yu-box-shadow-dark: 0 2px 10px rgba(255, 141, 156, 0.25);
+
+    /* 暗色模式下的特殊冰淇淋效果颜色 */
+    --yu-color-sprinkles: #ff8d9c;
+    /* 更暗的糖针色 */
+    --yu-color-cherry: #ff4d6d;
+    /* 更暗的樱桃色 */
+    --yu-color-vanilla: #ffd9b9;
+    /* 更暗的香草色 */
+    --yu-color-chocolate: #3d2e29;
+    /* 更暗的巧克力色 */
+    --yu-color-cone: #be8c50;
+    /* 更暗的甜筒色 */
+}
+
+/* 颜色变量的暗色模式兼容性处理 */
+.dark {
+    /* 为所有light变量提供暗色模式值 */
+    --yu-color-primary-light-3: #ffadb9;
+    --yu-color-primary-light-5: #ffc1cb;
+    --yu-color-primary-light-7: #ffd9e0;
+    --yu-color-primary-light-8: #ffe6ec;
+    --yu-color-primary-light-9: #fff0f3;
+    --yu-color-primary-dark-2: #ff6b81;
+
+    --yu-color-success-light-3: #c9ecc9;
+    --yu-color-success-light-5: #d4f1d4;
+    --yu-color-success-light-7: #e6f7e6;
+    --yu-color-success-light-8: #f0fbf0;
+    --yu-color-success-light-9: #f6fdf6;
+    --yu-color-success-dark-2: #8bbe8b;
+
+    --yu-color-warning-light-3: #ffe2ca;
+    --yu-color-warning-light-5: #ffe9d5;
+    --yu-color-warning-light-7: #fff1e6;
+    --yu-color-warning-light-8: #fff5ee;
+    --yu-color-warning-light-9: #fffaf5;
+    --yu-color-warning-dark-2: #d4aa84;
+
+    --yu-color-danger-light-3: #ff9dae;
+    --yu-color-danger-light-5: #ffb3bf;
+    --yu-color-danger-light-7: #ffc9d1;
+    --yu-color-danger-light-8: #ffd4db;
+    --yu-color-danger-light-9: #ffe6ec;
+    --yu-color-danger-dark-2: #e64a65;
+
+    --yu-color-info-light-3: #ded5ff;
+    --yu-color-info-light-5: #e6dfff;
+    --yu-color-info-light-7: #eeebff;
+    --yu-color-info-light-8: #f3f0ff;
+    --yu-color-info-light-9: #f9f7ff;
+    --yu-color-info-dark-2: #a99cd9;
 }

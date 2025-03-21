@@ -60,7 +60,6 @@ const options = [
 
 <style scoped>
 .demo-container {
-  background-color: var(--yu-fill-color-blank, #ffffff);
   padding: 24px;
 }
 

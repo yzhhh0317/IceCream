@@ -138,7 +138,6 @@ library.add(
 <style scoped>
 .icon-animation-demo {
   padding: 24px;
-  background-color: var(--yu-fill-color-blank);
   border-radius: 4px;
 }
 
@@ -184,7 +183,6 @@ code {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   padding: 24px;
-  background-color: var(--yu-fill-color-lighter);
   border-radius: 8px;
 }
 

@@ -88,7 +88,6 @@ library.add(faHeart)
 <style scoped>
 .icon-color-demo {
   padding: 24px;
-  background-color: var(--yu-fill-color-blank);
   border-radius: 4px;
 }
 
@@ -125,7 +124,6 @@ library.add(faHeart)
   grid-template-columns: repeat(5, 1fr);
   gap: 24px;
   padding: 20px;
-  background-color: var(--yu-fill-color-lighter);
   border-radius: 8px;
 }
 
