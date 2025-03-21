@@ -12,6 +12,7 @@ IceCream UI 是一款基于 Vue3 开发的 UI 组件库，使用 Composition API
 - **📦 按需引入**：支持组件按需引入，优化应用体积
 - **🔧 TypeScript 支持**：完全使用 TypeScript 编写，提供类型定义
 - **🎨 可定制主题**：基于 CSS 变量的主题系统，易于定制
+- **🌓 暗色模式**：内置精美的草莓冰淇淋风格暗色主题，一键切换
 - **📱 响应式设计**：适配不同屏幕尺寸
 - **🔍 详细文档**：提供完善的使用文档和示例
 
@@ -115,7 +116,7 @@ IceCream-UI/
 
 ## 在线演示
 
-查看[在线演示文档](https://your-demo-url.com)了解更多组件细节和用法示例。
+查看[在线演示文档](https://yzhhh0317.github.io/IceCream/)了解更多组件细节和用法示例。
 
 ## 贡献指南
 
@@ -124,10 +125,6 @@ IceCream-UI/
 3. 提交你的更改 (`git commit -m 'Add some amazing feature'`)
 4. 推送到分支 (`git push origin feature/amazing-feature`)
 5. 打开一个 Pull Request
-
-## 许可证
-
-[MIT](LICENSE)
 
 ## 联系方式
 
