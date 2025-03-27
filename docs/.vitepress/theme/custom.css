@@ -201,8 +201,16 @@
     border-color: #3d2e29;
 }
 
+.dark .vp-doc p{
+    color: #FFD9E0;
+}
+
 .dark .vp-doc tr:nth-child(2n) {
     background-color: #261e1c;
+}
+
+.dark .vp-doc table  {
+    color: #FFD9E0;
 }
 
 /* 演示容器样式 */
