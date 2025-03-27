@@ -64,6 +64,7 @@ library.add(faSearch, faEdit, faCheck, faBell, faStar, faTrash)
   flex-direction: column;
   gap: 2px;
   padding: 0px;
+  width: 100%;
 }
 
 .section-title {
@@ -76,10 +77,17 @@ library.add(faSearch, faEdit, faCheck, faBell, faStar, faTrash)
 .button-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 2px;
+  gap: 14px;
   margin-bottom: 0;
   align-items: center;
   padding: 20px;
   border-radius: 4px;
+  min-width: 0; 
+  overflow-x: visible;
+}
+
+/* 覆盖按钮容器中的默认边距 */
+.button-section .yu-button + .yu-button {
+  margin-left: 0; /* 覆盖可能存在的默认边距 */
 }
 </style>

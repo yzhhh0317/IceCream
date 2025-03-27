@@ -56,6 +56,7 @@ library.add(faSearch, faEdit, faCheck, faUpload, faDownload, faShare)
   flex-direction: column;
   gap: 24px;
   padding: 16px 26px;
+  width: 100%;
 }
 .row {
   display: flex;

@@ -29,6 +29,7 @@ import Button from '@/components/Button/Button.vue'
   flex-direction: column;
   gap: 20px;
   padding-top: 10px;
+  width: 100%;
 }
 .row {
   display: flex;
