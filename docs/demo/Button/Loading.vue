@@ -43,7 +43,7 @@ const handleClick = (loader) => {
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 9px;
   margin-bottom: 12px;
 }
 </style>

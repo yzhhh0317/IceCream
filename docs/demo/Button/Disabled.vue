@@ -34,7 +34,7 @@ import Button from '@/components/Button/Button.vue'
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 9px;
   margin-bottom: 12px;
 }
 </style>

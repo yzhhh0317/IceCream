@@ -61,7 +61,7 @@ library.add(faSearch, faEdit, faCheck, faUpload, faDownload, faShare)
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 26px;
+  gap: 9px;
   margin-bottom: 0;
   align-items: center;
 }

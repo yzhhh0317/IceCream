@@ -77,7 +77,7 @@ library.add(faSearch, faEdit, faCheck, faBell, faStar, faTrash)
 .button-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 13px;
   margin-bottom: 0;
   align-items: center;
   padding: 20px;
